@@ -1,0 +1,30 @@
+<div class='col-xs-12  col-sm-4 '>
+	<a href="{% url 'device:product_development_model' model_name=obj.product_model %}">
+	  	<table class="table table-bordered " >
+		  		<td style="font-size:20px;">
+		  		<form>
+	  			<p style="float: left;" class="product_model" ></p> 
+				  <button type="submit" id='del_model' value="{{obj.product_model}}" style="float: right;" class="btn btn-default" >
+					<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+				</button>
+				</form>
+		  		</td>
+	  		</tr>
+	  		<tr>
+		  		<td>
+		  		描述:{{obj.product_desc | truncatechars:9}}
+		  		</td>
+	  		</tr>	
+	  		<tr>
+		  		<td>
+		  		创建时间:{{obj.create_time}}
+		  		</td>
+	  		</tr>	
+	  		<tr>
+		  		<td>
+		  		更新时间:{{obj.create_time}}
+		  		</td>
+	  		</tr>		  
+	  	</table>
+  	</a>
+</div>

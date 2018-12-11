@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+{% load staticfiles  %}
+<html>
+    <head>
+  	<title>登录</title>
+  	<!-- 下面两个meta 实现屏幕自适应 -->
+  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+ 	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" media="screen" />
+ 	<link rel="stylesheet" type="text/css" href="{% static 'css/mycss.css' %}" media="screen" />
+     </head>
+
+<body>
+	<div class='container-fluid'>
+
+		<div class="mylogin-padding"> 
+			
+		    <h1 style=" text-align: center;">登 录</h1>
+			    {% if context.login_error == True %}
+					<div class="col-xs-7 col-md-3 col-lg-3  col-center-block" style="color:red">
+						请输入一个正确的用户名和密码
+					</div>	
+				{% endif %}
+				<div class="col-xs-7 col-md-3 col-lg-3  col-center-block" > 
+					<form action="" method="post">
+						{% csrf_token %}  
+						    <input type="text" class="form-control" placeholder="请输入用户名/email" name="username" required="required" />
+						    <br>
+						    <input type="password" class="form-control" placeholder="请输入密码" name="password" required="required"/>
+							<br>
+						    <button class="btn-primary form-control">登 录</button>                
+					    	<br>
+							<a style="float: left; font-size: 130%" href="{% url 'app:Signup' %}"> 注册 </a>
+							<a style="float: right;font-size: 130%" href="{% url 'app:Keyback' %}"> 忘记密码？ </a>
+							<br>
+					</form>
+				</div>
+			</div>	
+	    </div>
+</body>
+</html>

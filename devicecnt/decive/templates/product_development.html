@@ -1,0 +1,164 @@
+{% extends 'home_base.html' %}
+
+{% block context %}
+<!-- Small modal -->
+<div class="row " style="margin-bottom: 30px;margin-left: 10px;">
+    <button id="createproduct_botton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">创建产品</button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="exampleModalLabel">创建产品</h4>
+          </div>
+          <div class="modal-body">
+            <form action="{% url 'device:product_development' %}" method="post">
+            	{% csrf_token %}  
+              <div class="form-group">
+                <label for="recipient-name" class="control-label" >产品型号</label>
+                <p id="is_chinese" style="color: red" hidden="true"></p>
+                <input type="text" class="form-control" id="recipient-name" name="product_model" placeholder="不允许中文,首位必须是字母" required="required">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="control-label">产品描述</label>
+                <textarea class="form-control" id="message-text" name="product_dec" placeholder="请输入该产品的应用领域及具体项目 例如智能家居-灯控..." required="required"></textarea>
+              </div>
+               <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+               <button type="submit" class="btn btn-primary" id="save" style="float: right;">保存</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="row ">
+	{% if ProductModelobj %}
+		{% for obj in ProductModelobj %}
+		<div class="col-xs-12  col-sm-4 select" >
+			<a href="{% url 'device:product_development_model' model_name=obj.product_model %}" >
+			  	<table class="table table-bordered " >
+				  		<td style="font-size:20px;">
+				  		<form>
+			  			<p style="float: left;" class="product_model" > <strong>{{obj.product_model}}</strong></p> 
+						  <button type="submit" id='del_model' value="{{obj.product_model}}" style="float: right;" class="btn btn-default" >
+							<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+						</button>
+						</form>
+				  	</td>
+			  		<tr>
+				  		<td>
+				  		描述:{{obj.product_desc | truncatechars:9}}
+				  		</td>
+			  		</tr>	
+			  		<tr>
+				  		<td>
+				  		创建时间:{{obj.create_time}}
+				  		</td>
+			  		</tr>	
+			  		<tr>
+				  		<td>
+				  		更新时间:{{obj.create_time}}
+				  		</td>
+			  		</tr>		  
+			  	</table>
+		  	</a>
+		</div>
+	  	{% endfor %}
+	{% endif %}
+</div>
+<script>
+  $(function(){
+    $('#save').click(function(){ 
+        var product_model = $('#recipient-name').val();
+        var product_dec   = $('#message-text').val();
+
+        var data = {
+        		'product_model':product_model,
+        		'product_dec':product_dec
+        }
+
+        console.log(product_model);
+        if (product_model.length==0)
+        {
+           $('#is_chinese').replaceWith("<p id='is_chinese' style='color: red'>输入不能为空</p>")
+        }
+        else if (is_chinese(product_model) == true){
+          $('#is_chinese').replaceWith("<p id='is_chinese' style='color: red'>不能填中文</p>")
+        }
+        else if (thefirstis_num(product_model))
+        {
+          $('#is_chinese').replaceWith("<p id='is_chinese' style='color: red'>首字符不能是数字</p>")
+        }
+        else if (product_dec.length>64)
+        {
+        	$('#is_chinese').replaceWith("<p id='is_chinese' style='color: red'>产品描述不能超过64个字符</p>")
+        }
+        else
+        {
+        	$.ajax({
+        		url:"{% url 'device:product_development' %}",
+        		type:"POST",
+        		timeout:3000,
+        		contextType:"application/json;charset=utf-8",
+        		data:JSON.stringify(data),//data 为字典格式
+        		dataType:"json",
+        		async:true,
+        		headers:{"X-CSRFToken":$('[name="csrfmiddlewaretoken"]').val()},
+        		success:function(arg){
+        			console.log(arg);
+					if (arg['exists']==true)
+					{
+					alert('模型已经存在，不能创建相同名字的模型');
+					}
+	              	window.location.href="{% url 'device:product_development' %}"
+	        		},
+        		error:function(XMLHttpRequest,textStatus,errorThrown){
+        			console.log(textStatus);
+        		},
+        	})
+        }
+    return false  
+    });
+	 $('.select #del_model').click(function(){
+    	var model_namedict = {
+    		'model_name':$(this).attr('value'), //this 就是元素本身
+    	};
+    	if(model_namedict.model_name.length==0)
+    	{
+    		console.log('model_name.length=0')
+    	}
+    	else
+    	{
+	    	console.log(model_namedict.model_name)
+	    	if (alert_cancel('确定删除 '+model_namedict.model_name+' 模型吗？'))
+        {
+  	    	$.ajax({
+  	    			  url:"{% url 'device:del_model' %}",
+  	        		type:"POST",
+  	        		timeout:3000,
+  	        		contextType:"application/json;charset=utf-8",
+  	        		data:JSON.stringify(model_namedict),//data 为字典格式
+  	        		dataType:"json",
+  	        		async:true,
+  	        		headers:{"X-CSRFToken":$('[name="csrfmiddlewaretoken"]').val()},
+  	        		success:function(arg){
+  	        			console.log(arg);
+                  window.location.href="{% url 'device:product_development' %}"
+  	        		},
+  	        		error:function(XMLHttpRequest,textStatus,errorThrown){
+  	        			console.log(textStatus);
+  	        		},
+  	    	})
+  	    	return false
+        }
+    	}
+	});
+    $("#createproduct_botton").click(function(){
+       $('#is_chinese').html('<p id="is_chinese" style="color: red" hidden="true"></p>')
+       $("#recipient-name").val("");// 设置值为空
+       $("#message-text").val("");
+    });
+  });
+</script>
+{% endblock %}

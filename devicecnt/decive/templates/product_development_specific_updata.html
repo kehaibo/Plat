@@ -1,0 +1,194 @@
+{% load staticfiles %}
+<div class="row" hidden="hidden">
+	<div class="col-xs-4 col-sm-4">
+		<p> 
+			1、添加上行数据体，是指设备主动上传的数据。定义按键<br>
+			2、展示已经定义好的数据体。定义列表列举数据体具体内容<br>
+			3、在数据体列表中增加可添加数据点按键。<br>
+		</p>
+		<button id="test">test</button>
+	</div>	
+</div>
+<div class="row">
+	<button class="btn btn-primary updata_button" style="outline:none;" type="button" >新增上行数据</button>
+</div>
+<div >
+	<div class="modal fade" id="add_updata" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="exampleModalLabel">上行数据</h4>
+			</div>
+			<div class="modal-body updataform">
+				<form class=" myupdataform">
+	                {% csrf_token %}  
+					<div class="row">
+						<div class="col-sm-3 col-sm-offset-1"> 
+						<label  style="font-size:16px;padding:5px;text-align:right;">数据名称</label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control add_data modalpointname"  placeholder="msg_1" id="data_point_name" required='required' >
+						</div>
+					</div>
+	                <div class="row">
+						<div class="col-sm-3 col-sm-offset-1 "> 
+	                    <label  style="font-size:16px;padding:5px;">显示名称</label>
+	                    </div>
+	                    <div class="col-sm-6">
+	                        <input type="text" class="form-control add_data modalshowname"  placeholder="协议_1"  id="data_point_showname" required='required'>
+	                    </div>
+	                </div>
+	                <div class="row">
+						<div class="col-sm-3 col-sm-offset-1 "> 
+	                    <label  style="font-size:16px;padding:5px;">TLVType</label>
+	                    </div>
+	                    <div class="col-sm-6">
+	                        <input type="text" class="form-control add_data modeltlvtype"  placeholder="0-255之间的数字" id="TLVType" required='required'>
+	                    </div>
+	                </div>
+	                <!---<div class="row adddatapoint">
+		                	<div class="col-sm-3 col-sm-offset-1 datapoint"> 
+	                            <label  style="font-size:16px;padding:5px;">数据点</label>
+	                        </div>
+	                        <div class="col-sm-4 col-xs-7 updataselect_point">
+			                	<select class="form-control" id="select_point" >
+			                		{% if Pointlist %}
+			                			{% for point in Pointlist %}
+			                				<option>{{point.show_name}}</option>
+			                			{% endfor %}
+			                		{% endif %}
+								</select>
+							</div>
+							<div class="col-sm-4 col-xs-3 add_point_button">
+								<div class="row">
+									<button class="col-sm-3 col-xs-5  addpoint_button" type="button" id="addpoint"><span class="glyphicon glyphicon-plus-sign"></span></button>
+									<button class="col-sm-3 col-xs-5  addpoint_button" type="button" id="delpoint"><span class="glyphicon glyphicon-minus-sign"></span></button>
+								</div>		
+							</div>	                		
+	                </div>-->        
+	                <div class="row updatapost" style="margin-top: 10px;">
+	                    <div class="col-xs-1 col-xs-offset-4  col-sm-1 col-sm-offset-4">
+	                        <button type="button" class="btn btn-default" data-dismiss="modal"  style="padding-left: 20px;padding-right: 20px;">取消</button>
+	                    </div>  
+	                    <div class="col-xs-1 col-xs-offset-1 col-sm-1 col-sm-offset-2">                      
+	                        <button type="submit" class="btn btn-primary" style="padding-left:20px;padding-right: 20px;margin-left: 40px;" id="data_point_save">保存</button>
+	                    </div>
+	                </div>      
+				</form> 							                 
+			</div>
+		  </div>
+		</div>
+	</div>	
+</div>
+
+<div class="row uppointshow" id={{ProductModelobj.product_model}}>
+{% if Upstreamlist %}
+    {% for upstream in Upstreamlist %}
+            <div class='col-xs-12 col-sm-12 point table-responsive' id="modal_{{upstream.id}}" data-name="{{upstream}}" >
+                    <table class="table">
+                        <tr class="row">
+                            <td class='col-xs-3  col-sm-3' >
+                            	<label class="col-xs-4 col-sm-4" style="float: left;">上行数据:</label>
+                                <p class='col-xs-8 col-sm-8 showname' style="float: left; " id={{upstream.stream_showname}}>{{upstream.stream_showname}}</p> 
+                            </td>
+                            <td class='col-xs-3  col-sm-3 pointname' id={{upstream.stream_name}}>
+                            	<label class="col-xs-4 col-sm-4">名称:</label>
+                            	<p class='col-xs-8 col-sm-8'>{{upstream.stream_name}}</p>
+                            </td>
+                            <td class='col-xs-3  col-sm-3 tlvtype' id={{upstream.stream_Type}}>
+                            	<label class="col-xs-4 col-sm-4">TLVType:</label>
+                            	<p class='col-xs-8 col-sm-8'>{{upstream.stream_Type}}</p>
+                            </td>
+                            <td class='col-xs-3 col-sm-3'>
+                                <form style="float: right;">
+                                    <button type="submit" id='del_point' value="{{upstream.data_name}}"  class="btn btn-default" >
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr class="row">
+   							<td class='col-xs-4  col-sm-4 ' id="">
+   								<form  style="float:left;">
+   									<lable  class='col-xs-4 col-sm-4'>上行数据点:</lable>
+   									<div class='col-xs-8 col-sm-8'>
+   										<button class="addpoint_button" type="submit" id="addpoint"><span class="glyphicon glyphicon-plus-sign"></span></button>
+										<button class="addpoint_button" type="submit" id="delpoint"><span class="glyphicon glyphicon-minus-sign"></span></button>
+   									</div>
+	   								
+	   							</form>	
+                            </td>
+                            <!--{% for p in upstream.up_point.all %}
+	                             <td class='col-xs-4  col-sm-4 '>
+	   									<p>{{p.id}}</p>
+	   							</td> 
+   							{% endfor %}  -->
+                        </tr>   
+                        <tr class="row">
+                            <td class='col-xs-4  col-sm-4 ' id="">
+                            <form  style="float:left;">
+                            	响应数据点: 
+								<button class="addpoint_button" type="submit" id="addpoint"><span class="glyphicon glyphicon-plus-sign"></span></button>
+								<button class="addpoint_button" type="submit" id="delpoint"><span class="glyphicon glyphicon-minus-sign"></span></button>
+	   						</form>	
+                        </tr>    
+                    </table>  
+            </div>
+    {% endfor %}
+{% endif %}      
+</div>
+
+
+
+<script type="text/javascript">
+
+	$(function(){
+		$('.row #test').click(function () {
+			$(this).text('hell0');
+		});
+		$('.updata_button').click(function(){
+			$('#add_updata').modal('show');
+			updataobj = new Object;
+		});
+		$('.updatapost #data_point_save').click(function(){
+			$('input').attr('required',required);
+			updataobj['operation']     = 'save'
+			updataobj['upstream_name'] = $('.updataform .row .col-sm-6 #data_point_name').val();
+			updataobj['upstream_showname'] = $('.updataform .row .col-sm-6 #data_point_showname').val();
+			updataobj['upstream_Type'] = $('.updataform .row .col-sm-6 #TLVType').val();
+			updataobj['upstream_point'] = $('.updataform .row .col-sm-6 #select_point').val();
+			console.log(updataobj);
+
+			$.ajax({
+                    url:"../../product_development_specific/"+model_name+'/'+data_pointobj.model_select_uri,
+                    type:"POST",
+                    timeout:3000,
+                    contextType:"application/json;charset=utf-8",
+                    data:JSON.stringify(updataobj),//data 为字典格式
+                    dataType:"json",
+                    async:true,
+                    headers:{"X-CSRFToken":$('[name="csrfmiddlewaretoken"]').val()},
+                    success:function(arg){
+                        console.log(arg);
+                        window.location.href="."
+                    },
+                    error:function(XMLHttpRequest,textStatus,errorThrown){
+                        console.log(textStatus);
+                    },
+			});
+			return false;
+		});
+		$("button[id='addpoint']").click(function(){
+			//cloneaddpoint();
+			//return false;
+		});	
+		$(".adddatapoint button[id='delpoint']").click(function(){
+			cloneaddpoint();
+			return false;
+		});	
+	});
+	
+</script>
+
+
