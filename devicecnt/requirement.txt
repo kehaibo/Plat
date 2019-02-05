@@ -1,0 +1,4 @@
+django==1.11
+django-users2
+django-simple-captcha==0.5.9
+celery==3.1

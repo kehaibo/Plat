@@ -1,0 +1,387 @@
+2019-01-07 22:12:25+0800 [-] Log opened.
+2019-01-07 22:12:25+0800 [-] EchoFactory starting on 8001
+2019-01-07 22:12:25+0800 [-] Starting factory <__main__.EchoFactory object at 0x03423FF0>
+2019-01-07 22:12:25+0800 [-] Listening....
+2019-01-07 22:12:25+0800 [-] 
+2019-01-07 22:14:16+0800 [-] 'error:(1406, "Data too long for column \'UUID\' at row 1")'
+2019-01-07 22:14:16+0800 [-] Insert error:(1406, "Data too long for column 'UUID' at row 1")
+2019-01-07 22:16:16+0800 [-] info:C71FC009E496F7FAFA597A6F475E40FC timeout
+2019-01-07 22:16:16+0800 [-] info:C71FC009E496F7FAFA597A6F475E40FC disconnected
+2019-01-07 22:16:16+0800 [-] 'error:(1406, "Data too long for column \'UUID\' at row 1")'
+2019-01-07 22:16:46+0800 [-] Log opened.
+2019-01-07 22:16:46+0800 [-] EchoFactory starting on 8001
+2019-01-07 22:16:46+0800 [-] Starting factory <__main__.EchoFactory object at 0x03424FF0>
+2019-01-07 22:16:46+0800 [-] Listening....
+2019-01-07 22:16:46+0800 [-] 
+2019-01-07 22:18:00+0800 [-] Log opened.
+2019-01-07 22:18:00+0800 [-] Traceback (most recent call last):
+2019-01-07 22:18:00+0800 [-]   File "D:\my_app\python3.6\lib\site-packages\twisted\internet\iocpreactor\tcp.py", line 455, in startListening
+2019-01-07 22:18:00+0800 [-]     skt.bind(addr)
+2019-01-07 22:18:00+0800 [-] OSError: [WinError 10048] 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+2019-01-07 22:18:00+0800 [-] 
+2019-01-07 22:18:00+0800 [-] During handling of the above exception, another exception occurred:
+2019-01-07 22:18:00+0800 [-] 
+2019-01-07 22:18:00+0800 [-] Traceback (most recent call last):
+2019-01-07 22:18:00+0800 [-]   File "D:\development\Plat-1\Plat\Iotserver\server.py", line 325, in <module>
+2019-01-07 22:18:00+0800 [-]     reactor.listenTCP(8001,Devfactory)
+2019-01-07 22:18:00+0800 [-]   File "D:\my_app\python3.6\lib\site-packages\twisted\internet\iocpreactor\reactor.py", line 157, in listenTCP
+2019-01-07 22:18:00+0800 [-]     p.startListening()
+2019-01-07 22:18:00+0800 [-]   File "D:\my_app\python3.6\lib\site-packages\twisted\internet\iocpreactor\tcp.py", line 457, in startListening
+2019-01-07 22:18:00+0800 [-]     raise error.CannotListenError(self.interface, self.port, le)
+2019-01-07 22:18:00+0800 [-] twisted.internet.error.CannotListenError: Couldn't listen on any:8001: [WinError 10048] 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。.
+2019-01-07 22:18:41+0800 [-] Log opened.
+2019-01-07 22:18:41+0800 [-] EchoFactory starting on 8001
+2019-01-07 22:18:41+0800 [-] Starting factory <__main__.EchoFactory object at 0x03424FF0>
+2019-01-07 22:18:41+0800 [-] Listening....
+2019-01-07 22:18:41+0800 [-] 
+2019-01-07 22:18:46+0800 [-] Insert error:(1406, "Data too long for column 'UUID' at row 1")
+2019-01-07 22:20:46+0800 [-] info:C71FC009E496F7FAFA597A6F475E40FC timeout
+2019-01-07 22:20:46+0800 [-] info:C71FC009E496F7FAFA597A6F475E40FC disconnected
+2019-01-07 22:23:05+0800 [-] Unhandled error in Deferred:
+2019-01-07 22:23:05+0800 [-] Unhandled Error
+	Traceback (most recent call last):
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+	    self.runUntilCurrent()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 851, in runUntilCurrent
+	    f(*a, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 459, in callback
+	    self._startRunCallbacks(result)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 567, in _startRunCallbacks
+	    self._runCallbacks()
+	--- <exception caught here> ---
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "D:\development\Plat-1\Plat\Iotserver\server.py", line 190, in get_model_struct
+	    defer_instancs = AutoDelect(self.model_struct,datastr,sqlconnect)
+	  File "D:\development\Plat-1\Plat\Iotserver\AutodelectProtocol\Autodelectprotoctol.py", line 32, in AutoDelect
+	    table_name = model_struct['model_name']+'_'+'Data'
+	builtins.TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+	
+2019-01-07 22:25:05+0800 [-] info:BC9EEB51694F60AA7AA590191A79AC4F timeout
+2019-01-07 22:25:05+0800 [-] info:BC9EEB51694F60AA7AA590191A79AC4F disconnected
+2019-01-07 22:31:25+0800 [-] Unhandled error in Deferred:
+2019-01-07 22:31:25+0800 [-] Unhandled Error
+	Traceback (most recent call last):
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+	    self.runUntilCurrent()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 851, in runUntilCurrent
+	    f(*a, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 459, in callback
+	    self._startRunCallbacks(result)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 567, in _startRunCallbacks
+	    self._runCallbacks()
+	--- <exception caught here> ---
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "D:\development\Plat-1\Plat\Iotserver\server.py", line 190, in get_model_struct
+	    defer_instancs = AutoDelect(self.model_struct,datastr,sqlconnect)
+	  File "D:\development\Plat-1\Plat\Iotserver\AutodelectProtocol\Autodelectprotoctol.py", line 32, in AutoDelect
+	    table_name = model_struct['model_name']+'_'+'Data'
+	builtins.TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+	
+2019-01-07 22:31:26+0800 [-] Unhandled error in Deferred:
+2019-01-07 22:31:26+0800 [-] Unhandled Error
+	Traceback (most recent call last):
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+	    self.runUntilCurrent()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 851, in runUntilCurrent
+	    f(*a, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 459, in callback
+	    self._startRunCallbacks(result)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 567, in _startRunCallbacks
+	    self._runCallbacks()
+	--- <exception caught here> ---
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "D:\development\Plat-1\Plat\Iotserver\server.py", line 190, in get_model_struct
+	    defer_instancs = AutoDelect(self.model_struct,datastr,sqlconnect)
+	  File "D:\development\Plat-1\Plat\Iotserver\AutodelectProtocol\Autodelectprotoctol.py", line 32, in AutoDelect
+	    table_name = model_struct['model_name']+'_'+'Data'
+	builtins.TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+	
+2019-01-07 22:32:28+0800 [-] Log opened.
+2019-01-07 22:32:28+0800 [-] EchoFactory starting on 8001
+2019-01-07 22:32:28+0800 [-] Starting factory <__main__.EchoFactory object at 0x03433FB0>
+2019-01-07 22:32:28+0800 [-] Listening....
+2019-01-07 22:32:28+0800 [-] 
+2019-01-07 22:32:32+0800 [-] None
+2019-01-07 22:32:32+0800 [-] Unhandled error in Deferred:
+2019-01-07 22:32:32+0800 [-] Unhandled Error
+	Traceback (most recent call last):
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+	    self.runUntilCurrent()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 851, in runUntilCurrent
+	    f(*a, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 459, in callback
+	    self._startRunCallbacks(result)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 567, in _startRunCallbacks
+	    self._runCallbacks()
+	--- <exception caught here> ---
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "D:\development\Plat-1\Plat\Iotserver\server.py", line 190, in get_model_struct
+	    defer_instancs = AutoDelect(self.model_struct,datastr,sqlconnect)
+	  File "D:\development\Plat-1\Plat\Iotserver\AutodelectProtocol\Autodelectprotoctol.py", line 33, in AutoDelect
+	    table_name = model_struct['model_name']+'_'+'Data'
+	builtins.TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+	
+2019-01-07 22:33:38+0800 [-] Log opened.
+2019-01-07 22:33:38+0800 [-] EchoFactory starting on 8001
+2019-01-07 22:33:38+0800 [-] Starting factory <__main__.EchoFactory object at 0x03424FD0>
+2019-01-07 22:33:38+0800 [-] Listening....
+2019-01-07 22:33:38+0800 [-] 
+2019-01-07 22:33:41+0800 [-] BC9EEB51694F60AA7AA590191A79AC4F
+2019-01-07 22:33:41+0800 [-] None
+2019-01-07 22:33:41+0800 [-] Unhandled error in Deferred:
+2019-01-07 22:33:41+0800 [-] Unhandled Error
+	Traceback (most recent call last):
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+	    self.runUntilCurrent()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 851, in runUntilCurrent
+	    f(*a, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 459, in callback
+	    self._startRunCallbacks(result)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 567, in _startRunCallbacks
+	    self._runCallbacks()
+	--- <exception caught here> ---
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "D:\development\Plat-1\Plat\Iotserver\server.py", line 191, in get_model_struct
+	    defer_instancs = AutoDelect(self.model_struct,datastr,sqlconnect)
+	  File "D:\development\Plat-1\Plat\Iotserver\AutodelectProtocol\Autodelectprotoctol.py", line 33, in AutoDelect
+	    table_name = model_struct['model_name']+'_'+'Data'
+	builtins.TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+	
+2019-01-07 22:35:41+0800 [-] info:BC9EEB51694F60AA7AA590191A79AC4F timeout
+2019-01-07 22:35:41+0800 [-] info:BC9EEB51694F60AA7AA590191A79AC4F disconnected
+2019-01-07 22:37:24+0800 [-] Log opened.
+2019-01-07 22:37:25+0800 [-] EchoFactory starting on 8001
+2019-01-07 22:37:25+0800 [-] Starting factory <__main__.EchoFactory object at 0x03424FB0>
+2019-01-07 22:37:25+0800 [-] Listening....
+2019-01-07 22:37:25+0800 [-] 
+2019-01-07 22:37:28+0800 [-] bc9eeb51694f60aa7aa590191a79ac4f
+2019-01-07 22:37:28+0800 [-] None
+2019-01-07 22:37:28+0800 [-] Unhandled error in Deferred:
+2019-01-07 22:37:28+0800 [-] Unhandled Error
+	Traceback (most recent call last):
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+	    self.runUntilCurrent()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 851, in runUntilCurrent
+	    f(*a, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 459, in callback
+	    self._startRunCallbacks(result)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 567, in _startRunCallbacks
+	    self._runCallbacks()
+	--- <exception caught here> ---
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "D:\development\Plat-1\Plat\Iotserver\server.py", line 191, in get_model_struct
+	    defer_instancs = AutoDelect(self.model_struct,datastr,sqlconnect)
+	  File "D:\development\Plat-1\Plat\Iotserver\AutodelectProtocol\Autodelectprotoctol.py", line 33, in AutoDelect
+	    table_name = model_struct['model_name']+'_'+'Data'
+	builtins.TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+	
+2019-01-07 22:38:42+0800 [-] Log opened.
+2019-01-07 22:38:42+0800 [-] EchoFactory starting on 8001
+2019-01-07 22:38:42+0800 [-] Starting factory <__main__.EchoFactory object at 0x03424FF0>
+2019-01-07 22:38:42+0800 [-] Listening....
+2019-01-07 22:38:42+0800 [-] 
+2019-01-07 22:39:05+0800 [-] BC9EEB51694F60AA7AA590191A79AC4F
+2019-01-07 22:39:05+0800 [-] (3,)
+2019-01-07 22:39:05+0800 [-] None
+2019-01-07 22:39:05+0800 [-] Unhandled error in Deferred:
+2019-01-07 22:39:05+0800 [-] Unhandled Error
+	Traceback (most recent call last):
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+	    self.runUntilCurrent()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 851, in runUntilCurrent
+	    f(*a, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 459, in callback
+	    self._startRunCallbacks(result)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 567, in _startRunCallbacks
+	    self._runCallbacks()
+	--- <exception caught here> ---
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "D:\development\Plat-1\Plat\Iotserver\server.py", line 192, in get_model_struct
+	    defer_instancs = AutoDelect(self.model_struct,datastr,sqlconnect)
+	  File "D:\development\Plat-1\Plat\Iotserver\AutodelectProtocol\Autodelectprotoctol.py", line 33, in AutoDelect
+	    table_name = model_struct['model_name']+'_'+'Data'
+	builtins.TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+	
+2019-01-07 22:40:30+0800 [-] Log opened.
+2019-01-07 22:40:30+0800 [-] EchoFactory starting on 8001
+2019-01-07 22:40:30+0800 [-] Starting factory <__main__.EchoFactory object at 0x03423FF0>
+2019-01-07 22:40:30+0800 [-] Listening....
+2019-01-07 22:40:30+0800 [-] 
+2019-01-07 22:40:32+0800 [-] BC9EEB51694F60AA7AA590191A79AC4F
+2019-01-07 22:40:32+0800 [-] None
+2019-01-07 22:40:32+0800 [-] Unhandled error in Deferred:
+2019-01-07 22:40:32+0800 [-] Unhandled Error
+	Traceback (most recent call last):
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+	    self.runUntilCurrent()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 851, in runUntilCurrent
+	    f(*a, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 459, in callback
+	    self._startRunCallbacks(result)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 567, in _startRunCallbacks
+	    self._runCallbacks()
+	--- <exception caught here> ---
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "D:\development\Plat-1\Plat\Iotserver\server.py", line 191, in get_model_struct
+	    defer_instancs = AutoDelect(self.model_struct,datastr,sqlconnect)
+	  File "D:\development\Plat-1\Plat\Iotserver\AutodelectProtocol\Autodelectprotoctol.py", line 33, in AutoDelect
+	    table_name = model_struct['model_name']+'_'+'Data'
+	builtins.TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+	
+2019-01-07 22:40:58+0800 [-] Log opened.
+2019-01-07 22:40:58+0800 [-] EchoFactory starting on 8001
+2019-01-07 22:40:58+0800 [-] Starting factory <__main__.EchoFactory object at 0x03423FF0>
+2019-01-07 22:40:58+0800 [-] Listening....
+2019-01-07 22:40:58+0800 [-] 
+2019-01-07 22:40:59+0800 [-] BC9EEB51694F60AA7AA590191A79AC4F
+2019-01-07 22:40:59+0800 [-] {'model_name': None, 'data_type': {'A1': {'01': 'Float'}}, 'typemappointname': {'A1': {'01': '电流_1'}}}
+2019-01-07 22:40:59+0800 [-] None
+2019-01-07 22:40:59+0800 [-] Unhandled error in Deferred:
+2019-01-07 22:40:59+0800 [-] Unhandled Error
+	Traceback (most recent call last):
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+	    self.runUntilCurrent()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 851, in runUntilCurrent
+	    f(*a, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 459, in callback
+	    self._startRunCallbacks(result)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 567, in _startRunCallbacks
+	    self._runCallbacks()
+	--- <exception caught here> ---
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "D:\development\Plat-1\Plat\Iotserver\server.py", line 192, in get_model_struct
+	    defer_instancs = AutoDelect(self.model_struct,datastr,sqlconnect)
+	  File "D:\development\Plat-1\Plat\Iotserver\AutodelectProtocol\Autodelectprotoctol.py", line 33, in AutoDelect
+	    table_name = model_struct['model_name']+'_'+'Data'
+	builtins.TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+	
+2019-01-07 22:41:00+0800 [-] BC9EEB51694F60AA7AA590191A79AC4F
+2019-01-07 22:41:00+0800 [-] {'model_name': None, 'data_type': {'A1': {'01': 'Float'}}, 'typemappointname': {'A1': {'01': '电流_1'}}}
+2019-01-07 22:41:00+0800 [-] None
+2019-01-07 22:41:00+0800 [-] Unhandled error in Deferred:
+2019-01-07 22:41:00+0800 [-] Unhandled Error
+	Traceback (most recent call last):
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+	    self.runUntilCurrent()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 851, in runUntilCurrent
+	    f(*a, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 459, in callback
+	    self._startRunCallbacks(result)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 567, in _startRunCallbacks
+	    self._runCallbacks()
+	--- <exception caught here> ---
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "D:\development\Plat-1\Plat\Iotserver\server.py", line 192, in get_model_struct
+	    defer_instancs = AutoDelect(self.model_struct,datastr,sqlconnect)
+	  File "D:\development\Plat-1\Plat\Iotserver\AutodelectProtocol\Autodelectprotoctol.py", line 33, in AutoDelect
+	    table_name = model_struct['model_name']+'_'+'Data'
+	builtins.TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+	
+2019-01-07 22:41:59+0800 [-] Log opened.
+2019-01-07 22:41:59+0800 [-] EchoFactory starting on 8001
+2019-01-07 22:41:59+0800 [-] Starting factory <__main__.EchoFactory object at 0x03423FF0>
+2019-01-07 22:41:59+0800 [-] Listening....
+2019-01-07 22:41:59+0800 [-] 
+2019-01-07 22:43:28+0800 [-] Log opened.
+2019-01-07 22:43:28+0800 [-] EchoFactory starting on 8001
+2019-01-07 22:43:28+0800 [-] Starting factory <__main__.EchoFactory object at 0x03423FB0>
+2019-01-07 22:43:28+0800 [-] Listening....
+2019-01-07 22:43:28+0800 [-] 
+2019-01-07 22:44:00+0800 [-] BC9EEB51694F60AA7AA590191A79AC4F
+2019-01-07 22:44:01+0800 [-] None
+2019-01-07 22:44:01+0800 [-] {'model_name': None, 'data_type': {'A1': {'01': 'Float'}}, 'typemappointname': {'A1': {'01': '电流_1'}}}
+2019-01-07 22:44:01+0800 [-] None
+2019-01-07 22:44:01+0800 [-] Unhandled error in Deferred:
+2019-01-07 22:44:01+0800 [-] Unhandled Error
+	Traceback (most recent call last):
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+	    self.runUntilCurrent()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 851, in runUntilCurrent
+	    f(*a, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 459, in callback
+	    self._startRunCallbacks(result)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 567, in _startRunCallbacks
+	    self._runCallbacks()
+	--- <exception caught here> ---
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "D:\development\Plat-1\Plat\Iotserver\server.py", line 193, in get_model_struct
+	    defer_instancs = AutoDelect(self.model_struct,datastr,sqlconnect)
+	  File "D:\development\Plat-1\Plat\Iotserver\AutodelectProtocol\Autodelectprotoctol.py", line 33, in AutoDelect
+	    table_name = model_struct['model_name']+'_'+'Data'
+	builtins.TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+	
+2019-01-07 22:46:00+0800 [-] info:BC9EEB51694F60AA7AA590191A79AC4F timeout
+2019-01-07 22:46:00+0800 [-] info:BC9EEB51694F60AA7AA590191A79AC4F disconnected
+2019-01-07 22:46:16+0800 [-] Log opened.
+2019-01-07 22:46:16+0800 [-] EchoFactory starting on 8001
+2019-01-07 22:46:16+0800 [-] Starting factory <__main__.EchoFactory object at 0x03423FF0>
+2019-01-07 22:46:16+0800 [-] Listening....
+2019-01-07 22:46:16+0800 [-] 
+2019-01-07 22:46:18+0800 [-] BC9EEB51694F60AA7AA590191A79AC4F
+2019-01-07 22:46:18+0800 [-] model_nameNone
+2019-01-07 22:46:18+0800 [-] {'model_name': None, 'data_type': {'A1': {'01': 'Float'}}, 'typemappointname': {'A1': {'01': '电流_1'}}}
+2019-01-07 22:46:18+0800 [-] None
+2019-01-07 22:46:18+0800 [-] Unhandled error in Deferred:
+2019-01-07 22:46:18+0800 [-] Unhandled Error
+	Traceback (most recent call last):
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+	    self.runUntilCurrent()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 851, in runUntilCurrent
+	    f(*a, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 459, in callback
+	    self._startRunCallbacks(result)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 567, in _startRunCallbacks
+	    self._runCallbacks()
+	--- <exception caught here> ---
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "D:\development\Plat-1\Plat\Iotserver\server.py", line 193, in get_model_struct
+	    defer_instancs = AutoDelect(self.model_struct,datastr,sqlconnect)
+	  File "D:\development\Plat-1\Plat\Iotserver\AutodelectProtocol\Autodelectprotoctol.py", line 33, in AutoDelect
+	    table_name = model_struct['model_name']+'_'+'Data'
+	builtins.TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+	
+2019-01-07 22:48:18+0800 [-] info:BC9EEB51694F60AA7AA590191A79AC4F timeout
+2019-01-07 22:48:18+0800 [-] info:BC9EEB51694F60AA7AA590191A79AC4F disconnected
+2019-01-07 22:51:01+0800 [-] Log opened.
+2019-01-07 22:51:01+0800 [-] EchoFactory starting on 8001
+2019-01-07 22:51:01+0800 [-] Starting factory <__main__.EchoFactory object at 0x03423FB0>
+2019-01-07 22:51:01+0800 [-] Listening....
+2019-01-07 22:51:01+0800 [-] 
+2019-01-07 22:51:03+0800 [-] BC9EEB51694F60AA7AA590191A79AC4F
+2019-01-07 22:51:03+0800 [-] model_nameNone
+2019-01-07 22:51:03+0800 [-] {'model_name': None, 'data_type': {'A1': {'01': 'Float'}}, 'typemappointname': {'A1': {'01': '电流_1'}}}
+2019-01-07 22:51:03+0800 [-] None
+2019-01-07 22:51:03+0800 [-] Unhandled error in Deferred:
+2019-01-07 22:51:03+0800 [-] Unhandled Error
+	Traceback (most recent call last):
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+	    self.runUntilCurrent()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 851, in runUntilCurrent
+	    f(*a, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 459, in callback
+	    self._startRunCallbacks(result)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 567, in _startRunCallbacks
+	    self._runCallbacks()
+	--- <exception caught here> ---
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "D:\development\Plat-1\Plat\Iotserver\server.py", line 193, in get_model_struct
+	    defer_instancs = AutoDelect(self.model_struct,datastr,sqlconnect)
+	  File "D:\development\Plat-1\Plat\Iotserver\AutodelectProtocol\Autodelectprotoctol.py", line 33, in AutoDelect
+	    table_name = model_struct['model_name']+'_'+'Data'
+	builtins.TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+	
+2019-01-07 22:53:03+0800 [-] info:BC9EEB51694F60AA7AA590191A79AC4F timeout
+2019-01-07 22:53:03+0800 [-] info:BC9EEB51694F60AA7AA590191A79AC4F disconnected

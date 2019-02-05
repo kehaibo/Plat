@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+	<title>忘记密码</title>
+		<!-- 下面两个meta 实现屏幕自适应 -->
+  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+ 	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" media="screen" />
+ 	<link rel="stylesheet" type="text/css" href="{% static 'css/mycss.css' %}" media="screen" />
+</head>
+
+<body>
+	<div class='container-fluid' style="vertical-align: middle;">
+
+		<div class="mylogin-padding">
+	    <h1 style=" text-align: center;">找回密码</h1>
+			<div class="col-xs-7 col-md-3 col-lg-2  col-center-block" >
+			<form action="" method="post">
+				{% csrf_token %}
+				{{form.as_p}}
+				<br>
+				<button class="btn-primary form-control">提 交</button>                
+			    <br>
+			    {% if user_exist == False%}
+					<div style="color: red;text-align: center;">你好！用户不存在</div>
+				{% endif %}
+			</div>
+	      	</form>
+	    </div>
+     </div>
+</body>
+</html>

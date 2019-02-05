@@ -1,0 +1,346 @@
+.col-center-block {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.col-left-block {
+    float: left;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mylogin-padding {
+    padding-top: 100px;
+}
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+}
+#outline > a > div {
+    margin:5px;
+}
+
+.borderlayout{
+    border: 2px solid #F5F5F5;
+    border-radius: 25px;
+}
+.DataPointShow table {
+    border: 2px solid #F5F5F5;
+    border-radius: 25px;
+    border-color: #5F9EA0;
+} 
+
+.DataPointShow table  td {
+    font-size: 15px;
+}
+
+.DataPointShow table  td  p{
+    font-size: 17px;
+}
+.add_data{
+    font-size:17px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.row .template_1{
+    font-size:15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.updata_button{
+    margin:30px;
+    font-size: 20px;
+    float: left;
+    background-color:#F0FFFF;
+    color:#000000;
+    border-radius: 30px;
+    outline:none;
+}
+.addpoint_button{
+    margin:2px;
+    padding: 0px;
+    border: 0px;
+    font-size: 20px;
+    float:center;
+    background-color: white;
+    outline:none; /*除掉按键点击是留下的外框线*/
+}
+.uppointshow table  {
+    border: 2px solid #F5F5F5;
+    border-radius: 25px;
+    border-color: #0000FF;
+} 
+.uppointshow table  td {
+    font-size: 20px;
+}
+
+.uppointshow table  td  p.selectedpoint{
+    font-size: 15px;
+}
+
+.uppointshow table  td  p{
+    font-size: 20px;
+}
+.uppointshow table  td label{
+    font-size: 20px;
+}
+
+.downdata_button{
+    margin:30px;
+    font-size: 20px;
+    float: left;
+    background-color:#F0FFFF;
+    color:#000000;
+    border-radius: 30px;
+    outline:none;
+}
+
+.downpointshow table  {
+    border: 2px solid #F5F5F5;
+    border-radius: 25px;
+    border-color: #0000FF;
+} 
+.downpointshow table  td {
+    font-size: 20px;
+}
+
+.downpointshow table  td  p.selectedpoint{
+    font-size: 15px;
+}
+
+.downpointshow table  td  p{
+    font-size: 20px;
+}
+.downpointshow table  td label{
+    font-size: 20px;
+}
+.form-group label{
+  font-size: 17px;
+}
+.device_showtable table td {
+  font-size: 15px;
+  text-align: center;
+}
+.device_showtable table td button{
+  border: none;
+  background-color: #fff;
+  outline:none; /*除掉按键点击是留下的外框线*/
+}
+.device_showtable table th {
+  font-size: 17px;
+  text-align: center;
+  outline:none; /*除掉按键点击是留下的外框线*/
+}
+#device_search{
+    margin:2px;
+    padding: 0px;
+    border: 0px;
+    font-size: 20px;
+    float:center;
+    background-color: white;
+    outline:none; /*除掉按键点击是留下的外框线*/
+}
+
+.pagination > li > input {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 13%;
+  outline:none;
+}
+
+table.table > td[id=black] span.icon-circle{
+  color: #0000FF;
+}
+
+ul.Equipment_nav >li> a{
+  font-size: 15px;
+  color: #000000;
+}
+div.device_details_info{
+  border-top:1px solid;
+}
+div.device_details_info > div._info >div{
+  margin-top: 0px;
+  background-color: #C0C0C0;
+  border-bottom:1px solid;
+}
+div.device_details_info > div._info >div>p{
+  margin-top: 20px;
+}
+div.device_details_info > div._history_data >div {
+  margin-top: 0px;
+  background-color: #C0C0C0;  
+}
+div.device_details_info > div._history_data >div>p {
+  margin-top: 20px;
+}
+div.device_details_info > div._command_status >div{
+  margin-top: 0px;
+  background-color: #C0C0C0;
+}
+div.device_details_info > div._command_status >div >p{
+  margin-top: 20px;
+}
+div.device_testing > div.selectdevices > div > label{
+  font-size: 20px;
+}
+div.device_testing > div.selectdevices > div.device_downcommand{
+  margin-top: 100px;
+}
+div.device_testing > div.selectdevices > div.device_downcommand > div > textarea{
+  width: 280px;
+  height: 100px;
+  font-size: 17px;
+}
+@media (min-width: 768px){
+    div.device_testing > div.selectdevices > div.device_downcommand > div > textarea{
+      width: 350px;
+      height: 100px;
+      font-size: 17px;
+    } 
+}
+div.device_testing > div.selectdevices > div.device_downcommand > div > #clear_downcmd{
+  margin-top: 20px;
+  float: right;
+  background-color: #C0C0C0;
+}
+div.device_testing > div.selectdevices > div.device_downcommand > div > #send_downcmd{
+  margin-top: 20px;
+  float: right;
+  background-color: #00FF00;
+}
+div.device_testing > div.return_values > div.print_response >  #clear_return{
+  margin-top: 20px;
+  float: right;
+  background-color: #C0C0C0;
+}
+
+div.device_testing > div.return_values > label{
+  background-color: #C0C0C0;
+  font-size: 30px; 
+  border: 1px solid ;
+  border-radius: 5px; 
+  height: 50px;
+  padding: 5px;
+  display: inline;
+}
+
+div.device_testing > div.return_values > div.print_response > textarea{
+  border: 1px solid #0000CC;
+  background-color:#FFFFFF;
+  display: inline;
+  font-size: 17px;
+  height: 450px;
+  padding: 5px;
+  margin: 0px;
+  background-color:   #F0F8FF;
+}

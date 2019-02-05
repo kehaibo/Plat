@@ -1,0 +1,348 @@
+{% load staticfiles %}
+<div class="row" hidden="hidden">
+	<div class="col-xs-4 col-sm-4">
+		<p> 
+			1、添加上行数据体，是指设备主动上传的数据。定义按键<br>
+			2、展示已经定义好的数据体。定义列表列举数据体具体内容<br>
+			3、在数据体列表中增加可添加数据点按键。<br>
+		</p>
+		<button id="test">test</button>
+	</div>	
+</div>
+<div class="row">
+	<button class="btn btn-primary updata_button" style="outline:none;" type="button" >新增上行数据</button>
+</div>
+<div >
+	<div class="modal fade" id="add_updata" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="exampleModalLabel">上行数据</h4>
+			</div>
+			<div class="modal-body updataform">
+				<form class=" myupdataform">
+	                {% csrf_token %}  
+					<div class="row">
+						<div class="col-sm-3 col-sm-offset-1"> 
+						<label  style="font-size:16px;padding:5px;text-align:right;">数据名称</label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control add_data modalstreamname"  placeholder="upmsg_1" id="stream_name" required='required' >
+						</div>
+					</div>
+	                <div class="row">
+						<div class="col-sm-3 col-sm-offset-1 "> 
+	                    <label  style="font-size:16px;padding:5px;">显示名称</label>
+	                    </div>
+	                    <div class="col-sm-6">
+	                        <input type="text" class="form-control add_data modalstreamshowname"  placeholder="上行协议_1"  id="stream_showname" required='required'>
+	                    </div>
+	                </div>
+	                <div class="row">
+						<div class="col-sm-3 col-sm-offset-1 "> 
+	                    <label  style="font-size:16px;padding:5px;">TLVType</label>
+	                    </div>
+	                    <div class="col-sm-6">
+	                        <input type="text" class="form-control add_data modelstreamtlvtype"  placeholder="0-255之间的数字" id="stream_TLVType" required='required'>
+	                    </div>
+	                </div>
+	                <div class="row updatapost" style="margin-top: 10px;">
+	                    <div class="col-xs-1 col-xs-offset-4  col-sm-1 col-sm-offset-4">
+	                        <button type="button" class="btn btn-default" data-dismiss="modal"  style="padding-left: 20px;padding-right: 20px;">取消</button>
+	                    </div>  
+	                    <div class="col-xs-1 col-xs-offset-1 col-sm-1 col-sm-offset-2">                      
+	                        <button type="submit" class="btn btn-primary" style="padding-left:20px;padding-right: 20px;margin-left: 40px;" id="data_point_save">保存</button>
+	                    </div>
+	                </div>      
+				</form> 							                 
+			</div>
+		  </div>
+		</div>
+	</div>	
+</div>
+<div >
+<div class="modal fade" id="update_streammodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="exampleModalLabel">上行数据</h4>
+			</div>
+			<div class="modal-body update_updataform">
+				<form class=" myupdataform">
+	                {% csrf_token %} 
+	               	<div class="row" hidden="hidden">
+						<div class="col-sm-3 col-sm-offset-1"> 
+						<label  style="font-size:16px;padding:5px;text-align:right;">数据体id</label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control add_data modalstreamname"  placeholder="msg_1" id="updatestream_id" required='required' >
+						</div>
+					</div> 
+					<div class="row">
+						<div class="col-sm-3 col-sm-offset-1"> 
+						<label  style="font-size:16px;padding:5px;text-align:right;">数据名称</label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control add_data modalstreamname"  placeholder="msg_1" id="updatestream_name" required='required' >
+						</div>
+					</div>
+	                <div class="row">
+						<div class="col-sm-3 col-sm-offset-1 "> 
+	                    <label  style="font-size:16px;padding:5px;">显示名称</label>
+	                    </div>
+	                    <div class="col-sm-6">
+	                        <input type="text" class="form-control add_data modalstreamshowname"  placeholder="协议_1"  id="updatestream_showname" required='required'>
+	                    </div>
+	                </div>
+	                <div class="row">
+						<div class="col-sm-3 col-sm-offset-1 "> 
+	                    <label  style="font-size:16px;padding:5px;">TLVType</label>
+	                    </div>
+	                    <div class="col-sm-6">
+	                        <input type="text" class="form-control add_data modelstreamtlvtype"  placeholder="0-255之间的数字" id="updatestream_TLVType" required='required'>
+	                    </div>
+	                </div>
+	                <div class="row update_updatapost" style="margin-top: 10px;">
+	                    <div class="col-xs-1 col-xs-offset-4  col-sm-1 col-sm-offset-4">
+	                        <button type="button" class="btn btn-default" data-dismiss="modal"  style="padding-left: 20px;padding-right: 20px;">取消</button>
+	                    </div>  
+	                    <div class="col-xs-1 col-xs-offset-1 col-sm-1 col-sm-offset-2">                      
+	                        <button type="submit" class="btn btn-primary" style="padding-left:20px;padding-right: 20px;margin-left: 40px;" id="update_save" >保存</button>
+	                    </div>
+	                </div>      
+				</form> 							                 
+			</div>
+		  </div>
+		</div>
+	</div>	
+</div>
+
+
+<div class="row uppointshow" id={{ProductModelobj.product_model}}>
+<!-- 更改数据点 模态框-->
+<div class="modal fade" id="updatapointmodel" tabindex="-1" role="dialog" aria-labelledby="updatapointmodel" data-checkboxname="datapoint_checkbox">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="updatapointmodel"><strong>上行数据点</strong></h3>
+      </div>
+      <div class="modal-body">
+	    	<div class="row pointsselect">
+            	<div class="col-sm-12">
+            	{% if ExistsedPointlist %}
+            		{% for point in ExistsedPointlist %}
+                  	<li style="font-size: 20px;float: left;list-style: none;"><input class="datapoint_checkbox" type="checkbox" name="pointcheckbox" value="{{point}}"  style="height: 18px;width: 20px;">{{point}}</li>
+                  	{% endfor %}
+                {% endif %}
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default"  data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="datapoint_save" data-upordown='2'>更新</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% if upstreamlist %}
+    {% for upstream in upstreamlist %}
+            <div class='col-xs-12  col-sm-12  stream_point table-responsive'  data-name="{{upstream}}" style="margin-top: 5px;">
+                    <table class="table" id="upmodal_{{upstream.id}}">
+                        <tr class="row">
+                            <td class='col-xs-3  col-sm-3 showname' id="{{upstream.stream_showname}}" data-streamid="{{upstream.id}}">  
+                                <strong>上行数据:</strong>{{upstream.stream_showname}}
+                            </td>
+                            <td class='col-xs-3  col-sm-3  pointname' id={{upstream.stream_name}}>
+                            	<p class='col-xs-3  col-sm-3  col-sm-offset-3'> <strong>名称:</strong>{{upstream.stream_name}}
+                            	</p>
+                             </td>	
+                           	<td class='col-xs-3 col-sm-3 streamtlvtype' id={{upstream.stream_Type}}>
+	                            <strong>TLVType:</strong>{{upstream.stream_Type}}
+                            </td>
+                            <td class='col-xs-3 col-sm-3'>
+                                <form style="float: left;">
+                                    <button type="submit" class="btn btn-default" id='del_stream' value="{{upstream.stream_name}}">
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                    </button>
+                               	</form>
+                            </td>
+                        </tr>
+                        <tr class="row">
+   							<td class='col-xs-1 col-sm-1 '>
+   								<strong>上行数据点:</strong>
+                            </td>
+                            <td class='col-xs-8  col-sm-8 '>
+                            {% for datapoint_ins in upstream_datapointlist%}
+                            	{%if datapoint_ins.upstream.stream_name == upstream.stream_name %}
+                            			<p class='col-xs-6 col-sm-2 selecteduppoint' style=" border: 2px solid #EEE8AA;margin: 2px;">{{datapoint_ins.data_point.show_name}}</p>
+                            	{% endif %}
+   							{% endfor %}
+   							</td> 
+   							<td>
+						 	</td>
+						 	<td class='col-xs-3  col-sm-3 '>
+						 		<form class="float:left">
+						 		<!--按键触发,获取已经存在的数据点-->
+						 			<button class="addpoint_button" type="submit" id="add_uppoint" style="float: left;font-size: 20px;" data-upstream='{{upstream.stream_name}}' data-upstreamid='upmodal_{{upstream.id}}' data-getselectdpointcls="col-xs-6 col-sm-2 selecteduppoint"><span class="glyphicon glyphicon-pencil"></span>
+						 		</button>
+						 		</form>
+						 	</td>
+                        </tr>   
+                    </table>  
+            </div>
+    {% endfor %}
+{% endif %}      
+</div>
+
+
+
+<script type="text/javascript">
+
+	$(function(){
+
+		$('.updata_button').click(function(){
+			//添加上行数据点
+			$('#add_updata').modal('show');
+			updataobj = new Object;
+		});
+		$('.updatapost #data_point_save').click(function(){
+			//保存数据流
+			$('input').attr('required','required');
+			updataobj['operation']     = 'save';
+			updataobj['stream_name'] = $('.updataform .row .col-sm-6 #stream_name').val();
+			updataobj['stream_showname'] = $('.updataform .row .col-sm-6 #stream_showname').val();
+			updataobj['stream_Type'] = $('.updataform .row .col-sm-6 #stream_TLVType').val();
+			console.log(updataobj);
+
+			$.ajax({
+                    url:"../../product_development_specific/"+model_name+'/'+data_pointobj.model_select_uri,
+                    type:"POST",
+                    timeout:5000,
+                    contextType:"application/json;charset=utf-8",
+                    data:JSON.stringify(updataobj),//data 为字典格式
+                    dataType:"json",
+                    async:true,
+                    headers:{"X-CSRFToken":$('[name="csrfmiddlewaretoken"]').val()},
+                    success:function(arg){
+                        console.log(arg);
+                        window.location.href="."
+                    },
+                    error:function(XMLHttpRequest,textStatus,errorThrown){
+                        console.log(textStatus);
+                    },
+			});
+			return false;
+		});
+		$(".uppointshow .table ").click(function(){
+			//获取原数据体信息
+			var id = $(this).attr('id');
+			updateupstream(id);
+			return false;
+		});
+
+		$('.update_updatapost #update_save').click(function(){
+			//修改数据体信息
+			var data = {
+				operation:'update_info',
+				stream_id :$('.update_updataform .row .col-sm-6  #updatestream_id').val(),
+				stream_showname:$('.update_updataform .row .col-sm-6 #updatestream_showname').val(),
+				stream_name:$('.update_updataform .row .col-sm-6 #updatestream_name').val(),
+				stream_Type: $('.update_updataform .row .col-sm-6 #updatestream_TLVType').val(),
+			}
+			$.ajax({
+                    url:"../../product_development_specific/"+model_name+'/'+data_pointobj.model_select_uri,
+                    type:"POST",
+                    timeout:5000,
+                    contextType:"application/json;charset=utf-8",
+                    data:JSON.stringify(data),//data 为字典格式
+                    dataType:"json",
+                    async:true,
+                    headers:{"X-CSRFToken":$('[name="csrfmiddlewaretoken"]').val()},
+                    success:function(arg){
+                        console.log(arg);
+                        window.location.href="."
+                    },
+                    error:function(XMLHttpRequest,textStatus,errorThrown){
+                        console.log(textStatus);
+                    },
+			});	
+			return false;		
+		});
+		$("button[id='del_stream']").click(function(){
+			//删除数据流
+			var delstreamobj = {
+				operation:'del',
+				stream_name:$(this).attr('value'),
+			}
+			if (alert_cancel('确定删除 '+delstreamobj.stream_name+'吗？'))
+			{
+				$.ajax({
+	                    url:"../../product_development_specific/"+model_name+'/'+data_pointobj.model_select_uri,
+	                    type:"POST",
+	                    timeout:5000,
+	                    contextType:"application/json;charset=utf-8",
+	                    data:JSON.stringify(delstreamobj),//data 为字典格式
+	                    dataType:"json",
+	                    async:true,
+	                    headers:{"X-CSRFToken":$('[name="csrfmiddlewaretoken"]').val()},
+	                    success:function(arg){
+	                        console.log(arg);
+	                        window.location.href="."
+	                    },
+	                    error:function(XMLHttpRequest,textStatus,errorThrown){
+	                        console.log(textStatus);
+	                    },
+				});
+				return false;				
+			}
+		});
+		$("button[id='add_uppoint']").click(function(){
+			//复选框选择数据点
+			upstream_name = $(this).attr('data-upstream');//upstream_name 全局变量
+			upstreamid    = $(this).attr('data-upstreamid');
+			selectedpointcls = $(this).attr('data-getselectdpointcls');
+			$('#updatapointmodel').modal('show');
+			$("input[class='datapoint_checkbox']").removeAttr('checked');
+			return false;
+		});
+		$('#updatapointmodel').on('shown.bs.modal', function (e) {
+ 			var modal_id=$(this).attr('id');
+ 			var checkboxname=$(this).attr('data-checkboxname');
+ 			Synchronous_selection(modal_id,upstreamid,checkboxname,selectedpointcls);
+		});
+		$("button[id='datapoint_save']").click(function(){
+			//保存选中的数据点
+			selectedpoint=selectpoint_forstream();
+			var pointchecked ={
+				operation:'update_point',
+				stream_name:upstream_name,
+				selectedpoint:selectedpoint,
+				point_attr:'2',
+			}
+			$.ajax({
+                    url:"../../product_development_specific/"+model_name+'/'+data_pointobj.model_select_uri,
+                    type:"POST",
+                    timeout:5000,
+                    contextType:"application/json;charset=utf-8",
+                    data:JSON.stringify(pointchecked),//data 为字典格式
+                    dataType:"json",
+                    async:true,
+                    headers:{"X-CSRFToken":$('[name="csrfmiddlewaretoken"]').val()},
+                    success:function(arg){
+                        console.log(arg);
+                        window.location.href="."
+                    },
+                    error:function(XMLHttpRequest,textStatus,errorThrown){
+                        console.log(textStatus);
+                    },
+			});
+			return false;				
+		})
+	});
+	
+</script>
+
+

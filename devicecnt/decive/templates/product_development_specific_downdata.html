@@ -1,0 +1,377 @@
+{% load staticfiles %}
+<div class="row" hidden="hidden">
+	<div class="col-xs-4 col-sm-4">
+		<p> 
+			1、添加上行数据体，是指设备主动上传的数据。定义按键<br>
+			2、展示已经定义好的数据体。定义列表列举数据体具体内容<br>
+			3、在数据体列表中增加可添加数据点按键。<br>
+		</p>
+		<button id="test">test</button>
+	</div>	
+</div>
+<div class="row">
+	<button class="btn btn-primary downdata_button" style="outline:none;" type="button" >新增下行数据</button>
+</div>
+<div >
+	<div class="modal fade" id="add_downdata" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="exampleModalLabel">下行数据</h4>
+			</div>
+			<div class="modal-body downdataform">
+				<form class=" mydowndataform">
+	                {% csrf_token %}  
+					<div class="row">
+						<div class="col-sm-3 col-sm-offset-1"> 
+						<label  style="font-size:16px;padding:5px;text-align:right;">数据名称</label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control add_data modalstreamname"  placeholder="downmsg_1" id="stream_name" required='required' >
+						</div>
+					</div>
+	                <div class="row">
+						<div class="col-sm-3 col-sm-offset-1 "> 
+	                    <label  style="font-size:16px;padding:5px;">显示名称</label>
+	                    </div>
+	                    <div class="col-sm-6">
+	                        <input type="text" class="form-control add_data modalstreamshowname"  placeholder="下行协议_1"  id="stream_showname" required='required'>
+	                    </div>
+	                </div>
+	                <div class="row">
+						<div class="col-sm-3 col-sm-offset-1 "> 
+	                    <label  style="font-size:16px;padding:5px;">TLVType</label>
+	                    </div>
+	                    <div class="col-sm-6">
+	                        <input type="text" class="form-control add_data modelstreamtlvtype"  placeholder="0-255之间的数字" id="stream_TLVType" required='required'>
+	                    </div>
+	                </div>
+	                <div class="row downdatapost" style="margin-top: 10px;">
+	                    <div class="col-xs-1 col-xs-offset-4  col-sm-1 col-sm-offset-4">
+	                        <button type="button" class="btn btn-default" data-dismiss="modal"  style="padding-left: 20px;padding-right: 20px;">取消</button>
+	                    </div>  
+	                    <div class="col-xs-1 col-xs-offset-1 col-sm-1 col-sm-offset-2">                      
+	                        <button type="submit" class="btn btn-primary" style="padding-left:20px;padding-right: 20px;margin-left: 40px;" id="data_point_save">保存</button>
+	                    </div>
+	                </div>      
+				</form> 							                 
+			</div>
+		  </div>
+		</div>
+	</div>	
+</div>
+<div >
+<div class="modal fade" id="update_downstreammodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="exampleModalLabel">下行数据</h4>
+			</div>
+			<div class="modal-body update_downdataform">
+				<form class=" myupdataform">
+	                {% csrf_token %}  
+	               	<div class="row" hidden="hidden">
+						<div class="col-sm-3 col-sm-offset-1"> 
+						<label  style="font-size:16px;padding:5px;text-align:right;">数据体id</label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control add_data modalstreamname"  placeholder="msg_1" id="downdatestream_id" required='required' >
+						</div>
+					</div> 
+					<div class="row">
+						<div class="col-sm-3 col-sm-offset-1"> 
+						<label  style="font-size:16px;padding:5px;text-align:right;">数据名称</label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control add_data modalstreamname"  placeholder="downmsg_1" id="downdatestream_name" required='required' >
+						</div>
+					</div>
+	                <div class="row">
+						<div class="col-sm-3 col-sm-offset-1 "> 
+	                    <label  style="font-size:16px;padding:5px;">显示名称</label>
+	                    </div>
+	                    <div class="col-sm-6">
+	                        <input type="text" class="form-control add_data modalstreamshowname"  placeholder="下行协议_1"  id="downdatestream_showname" required='required'>
+	                    </div>
+	                </div>
+	                <div class="row">
+						<div class="col-sm-3 col-sm-offset-1 "> 
+	                    <label  style="font-size:16px;padding:5px;">TLVType</label>
+	                    </div>
+	                    <div class="col-sm-6">
+	                        <input type="text" class="form-control add_data modelstreamtlvtype"  placeholder="0-255之间的数字" id="downdatestream_TLVType" required='required'>
+	                    </div>
+	                </div>
+	                <div class="row update_downdatapost" style="margin-top: 10px;">
+	                    <div class="col-xs-1 col-xs-offset-4  col-sm-1 col-sm-offset-4">
+	                        <button type="button" class="btn btn-default" data-dismiss="modal"  style="padding-left: 20px;padding-right: 20px;">取消</button>
+	                    </div>  
+	                    <div class="col-xs-1 col-xs-offset-1 col-sm-1 col-sm-offset-2">                      
+	                        <button type="submit" class="btn btn-primary" style="padding-left:20px;padding-right: 20px;margin-left: 40px;" id="update_save">保存</button>
+	                    </div>
+	                </div>      
+				</form> 							                 
+			</div>
+		  </div>
+		</div>
+	</div>	
+</div>
+
+
+<div class="row downpointshow" id={{ProductModelobj.product_model}}>
+<!-- 更改数据点 模态框-->
+<div class="modal fade" id="downdatapointmodel" tabindex="-1" role="dialog" aria-labelledby="downdatapointmodel" data-checkboxname="downdata_checkbox">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="downdatapointmodel"><strong>下行数据点</strong></h3>
+      </div>
+      <div class="modal-body">
+	    	<div class="row pointsselect">
+            	<div class="col-sm-12">
+            	{% if ExistsedPointlist %}
+            		{% for point in ExistsedPointlist %}
+                  	<li style="font-size: 20px;float: left;list-style: none;"><input class="downdata_checkbox" type="checkbox" name="pointcheckbox" value="{{point}}"  style="height: 18px;width: 20px;">{{point}}</li>
+                  	{% endfor %}
+                {% endif %}
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default"  data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="downdatapoint_save" >更新</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% if downstreamlist %}
+    {% for downstream in downstreamlist %}
+            <div class='col-xs-12  col-sm-12  stream_point table-responsive'  data-name="{{downstream}}" style="margin-top: 5px;">
+                    <table class="table" id="downmodal_{{downstream.id}}">
+                        <tr class="row">
+                            <td class='col-xs-3  col-sm-3 downshowname' id="{{downstream.stream_showname}}" data-streamid="{{downstream.id}}">  
+                                <strong>下行数据:</strong>{{downstream.stream_showname}}
+                            </td>
+                            <td class='col-xs-3  col-sm-3  downpointname' id={{downstream.stream_name}}>
+                            	<p class='col-xs-3  col-sm-3  col-sm-offset-3'> <strong>名称:</strong>{{downstream.stream_name}}
+                            	</p>
+                             </td>	
+                           	<td class='col-xs-3 col-sm-3 downstreamtlvtype' id={{downstream.stream_Type}}>
+	                            <strong>TLVType:</strong>{{downstream.stream_Type}}
+                            </td>
+                            <td class='col-xs-3 col-sm-3'>
+                                <form style="float: left;">
+                                    <button type="submit" class="btn btn-default" id='del_downstream' value="{{downstream.stream_name}}">
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                    </button>
+                               	</form>
+                            </td>
+                        </tr>
+                        <tr class="row">
+   							<td class='col-xs-1 col-sm-1 '>
+   								<strong>下行数据点:</strong>
+                            </td>
+                            <td class='col-xs-8  col-sm-8 '>
+                            {% for datapoint_ins in downstream_datapointlist%}
+                            	{%if datapoint_ins.downstream.stream_name == downstream.stream_name %}
+              						{% if datapoint_ins.point_attr == '1' %}
+                            			<p class='col-xs-6 col-sm-2 selecteddownpoint' style=" border: 2px solid #EEE8AA;margin: 2px;">{{datapoint_ins.data_point.show_name}}</p>
+              						{% endif %}
+                            		
+                            	{% endif %}
+   							{% endfor %}
+   							</td> 
+   							<td>
+						 		
+						 	</td>
+						 	<td class='col-xs-3  col-sm-3 '>
+						 		<form class="float:left">
+						 			<button class="addpoint_button" type="submit" id="add_downpoint" style="float: left;font-size: 20px;" data-downstream='{{downstream.stream_name}}' data-downstreamid='downmodal_{{downstream.id}}' data-upordown_attr='1' data-getselectdpointcls="col-xs-6 col-sm-2 selecteddownpoint"><span class="glyphicon glyphicon-pencil"></span>
+						 		</button>
+						 		</form>
+						 	</td>
+                        </tr>   
+                        <tr class="row">
+                            <td class='col-xs-1  col-sm-1 ' >
+                            	<strong>响应数据点:</strong>
+	   						</td>
+	   						<td class='col-xs-8  col-sm-8' >
+		   					{% for datapoint_ins in downstream_datapointlist%}
+                            	{%if datapoint_ins.downstream.stream_name == downstream.stream_name %}
+              						{% if datapoint_ins.point_attr == '3' %}
+                            			<p class='col-xs-6 col-sm-2 selecteddownretpoint' style=" border: 2px solid #EEE8AA;margin: 2px;">{{datapoint_ins.data_point.show_name}}</p>
+              						{% endif %}
+                            		
+                            	{% endif %}
+   							{% endfor %}
+	   						</td>
+	   						<td>
+	   							
+	   						</td>
+						 	<td class='col-xs-3  col-sm-3 '>
+						 		<form class="float:left">
+						 			<button class="addpoint_button" type="submit" id="add_downpoint" style="float: left;font-size: 20px;" data-downstream='{{downstream.stream_name}}' data-downstreamid='downmodal_{{downstream.id}}' data-upordown_attr='3' data-getselectdpointcls="col-xs-6 col-sm-2 selecteddownretpoint"><span class="glyphicon glyphicon-pencil"></span>
+						 		</button>
+						 		</form>
+						 	</td>
+                        </tr> 
+                    </table>  
+            </div>
+    {% endfor %}
+{% endif %}      
+</div>
+
+
+
+<script type="text/javascript">
+
+	$(function(){
+
+		$('.downdata_button').click(function(){
+			//添加上行数据点
+			$('#add_downdata').modal('show');
+			
+		});
+		$('.downdatapost #data_point_save').click(function(){
+			//保存数据流
+			var downdataobj = new Object;
+			$('input').attr('required','required');
+			downdataobj['operation']     = 'save';
+			downdataobj['stream_name'] = $('.downdataform .row .col-sm-6 #stream_name').val();
+			downdataobj['stream_showname'] = $('.downdataform .row .col-sm-6 #stream_showname').val();
+			downdataobj['stream_Type'] = $('.downdataform .row .col-sm-6 #stream_TLVType').val();
+			console.log(downdataobj);
+
+			$.ajax({
+                    url:"../../product_development_specific/"+model_name+'/'+data_pointobj.model_select_uri,
+                    type:"POST",
+                    timeout:5000,
+                    contextType:"application/json;charset=utf-8",
+                    data:JSON.stringify(downdataobj),//data 为字典格式
+                    dataType:"json",
+                    async:true,
+                    headers:{"X-CSRFToken":$('[name="csrfmiddlewaretoken"]').val()},
+                    success:function(arg){
+                        console.log(arg);
+                        window.location.href="."
+                    },
+                    error:function(XMLHttpRequest,textStatus,errorThrown){
+                        console.log(textStatus);
+                    },
+			});
+			return false;
+		});
+		$(".downpointshow .table ").click(function(){
+			//获取原数据体信息
+			var id = $(this).attr('id');
+			updatedownstream(id);
+			return false;
+		});
+
+		$('.update_downdatapost #update_save').click(function(){
+			//修改数据体信息
+			var data = {
+				operation:'update_info',
+				stream_id:$('.update_downdataform .row .col-sm-6 #downdatestream_id').val(),
+				stream_showname:$('.update_downdataform .row .col-sm-6 #downdatestream_showname').val(),
+				stream_name:$('.update_downdataform .row .col-sm-6 #downdatestream_name').val(),
+				stream_Type: $('.update_downdataform .row .col-sm-6 #downdatestream_TLVType').val(),
+			}
+			$.ajax({
+                    url:"../../product_development_specific/"+model_name+'/'+data_pointobj.model_select_uri,
+                    type:"POST",
+                    timeout:5000,
+                    contextType:"application/json;charset=utf-8",
+                    data:JSON.stringify(data),//data 为字典格式
+                    dataType:"json",
+                    async:true,
+                    headers:{"X-CSRFToken":$('[name="csrfmiddlewaretoken"]').val()},
+                    success:function(arg){
+                        console.log(arg);
+                        window.location.href="."
+                    },
+                    error:function(XMLHttpRequest,textStatus,errorThrown){
+                        console.log(textStatus);
+                    },
+			});	
+			return false;		
+		});
+		$("button[id='del_downstream']").click(function(){
+			//删除数据流
+			var delstreamobj = {
+				operation:'del',
+				stream_name:$(this).attr('value'),
+			}
+			if (alert_cancel('确定删除 '+delstreamobj.stream_name+'吗？'))
+			{
+				$.ajax({
+	                    url:"../../product_development_specific/"+model_name+'/'+data_pointobj.model_select_uri,
+	                    type:"POST",
+	                    timeout:5000,
+	                    contextType:"application/json;charset=utf-8",
+	                    data:JSON.stringify(delstreamobj),//data 为字典格式
+	                    dataType:"json",
+	                    async:true,
+	                    headers:{"X-CSRFToken":$('[name="csrfmiddlewaretoken"]').val()},
+	                    success:function(arg){
+	                        console.log(arg);
+	                        window.location.href="."
+	                    },
+	                    error:function(XMLHttpRequest,textStatus,errorThrown){
+	                        console.log(textStatus);
+	                    },
+				});
+				return false;				
+			}
+		});
+		$("button[id='add_downpoint']").click(function(){
+			//复选框选择数据点
+			downstream_name = $(this).attr('data-downstream');//downstream_name 全局变量
+			downstreamid    = $(this).attr('data-downstreamid');
+			upordown_attr   = $(this).attr('data-upordown_attr');
+			selectedpointcls = $(this).attr('data-getselectdpointcls');
+			$('#downdatapointmodel').modal('show');
+			$("input[class='downdata_checkbox']").removeAttr('checked');
+			return false;
+		});
+		$('#downdatapointmodel').on('shown.bs.modal', function (e) {
+ 			var modal_id=$(this).attr('id');
+ 			var checkboxname=$(this).attr('data-checkboxname');
+ 			Synchronous_selection(modal_id,downstreamid,checkboxname,selectedpointcls);
+		});
+		$("button[id='downdatapoint_save']").click(function(){
+			//保存选中的数据点
+			selectedpoint=selectpoint_forstream();
+			var pointchecked ={
+				operation:'update_point',
+				stream_name:downstream_name,
+				selectedpoint:selectedpoint,
+				point_attr:upordown_attr,
+			}
+			$.ajax({
+                    url:"../../product_development_specific/"+model_name+'/'+data_pointobj.model_select_uri,
+                    type:"POST",
+                    timeout:5000,
+                    contextType:"application/json;charset=utf-8",
+                    data:JSON.stringify(pointchecked),//data 为字典格式
+                    dataType:"json",
+                    async:true,
+                    headers:{"X-CSRFToken":$('[name="csrfmiddlewaretoken"]').val()},
+                    success:function(arg){
+                        console.log(arg);
+                        window.location.href="."
+                    },
+                    error:function(XMLHttpRequest,textStatus,errorThrown){
+                        console.log(textStatus);
+                    },
+			});
+			return false;				
+		})
+	});
+	
+</script>
+
+

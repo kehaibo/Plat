@@ -1,0 +1,6 @@
+2018-08-23 15:50:10,824 - mysql log - INFO - INSERT INTO DBDEVICE (UUID,TOTAL_POWER,ONOFF,TIMES) VALUES ('00000000001','0.16','OFF','2018-08-23 15:50:10')
+
+2018-08-23 15:50:10,825 - mysql log - INFO - sql error:(1054, "Unknown column 'TIMES' in 'field list'")
+2018-08-23 15:51:12,547 - mysql log - INFO - INSERT INTO DBDEVICE (UUID,TOTAL_POWER,ONOFF,CREAT_TIMES) VALUES ('00000000001','0.16','OFF','2018-08-23 15:51:12')
+
+2018-08-23 15:51:12,549 - mysql log - INFO - sql error:(<class 'TypeError'>, TypeError("a bytes-like object is required, not 'int'",))

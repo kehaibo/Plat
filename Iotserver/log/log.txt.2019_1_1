@@ -1,0 +1,114 @@
+2019-01-01 22:30:00+0800 [-] Log opened.
+2019-01-01 22:30:00+0800 [-] EchoFactory starting on 8001
+2019-01-01 22:30:00+0800 [-] Starting factory <__main__.EchoFactory object at 0x03422FF0>
+2019-01-01 22:30:00+0800 [-] Listening....
+2019-01-01 22:30:00+0800 [-] 
+2019-01-01 22:30:35+0800 [-] 'error:(1066, "Not unique table/alias: \'decive_upstream_datapoint\'")'
+2019-01-01 22:30:35+0800 [-] Unhandled error in Deferred:
+2019-01-01 22:30:35+0800 [-] Unhandled Error
+	Traceback (most recent call last):
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+	    self.runUntilCurrent()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 851, in runUntilCurrent
+	    f(*a, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 500, in errback
+	    self._startRunCallbacks(fail)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 567, in _startRunCallbacks
+	    self._runCallbacks()
+	--- <exception caught here> ---
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "D:\development\Plat-1\Plat\Iotserver\server.py", line 184, in get_model_struct
+	    for tupleindex in range(len(point_typelist[index])):
+	builtins.TypeError: 'NoneType' object is not subscriptable
+	
+2019-01-01 22:32:35+0800 [-] info:0102030405060708090A0B0C timeout
+2019-01-01 22:32:35+0800 [-] info:0102030405060708090A0B0C disconnected
+2019-01-01 22:32:42+0800 [-] Log opened.
+2019-01-01 22:32:42+0800 [-] EchoFactory starting on 8001
+2019-01-01 22:32:42+0800 [-] Starting factory <__main__.EchoFactory object at 0x03423FF0>
+2019-01-01 22:32:42+0800 [-] Listening....
+2019-01-01 22:32:42+0800 [-] 
+2019-01-01 22:32:45+0800 [-] {'model_name': 'khb_product_1', 'data_type': {'A1': {'04': 'UInt', '03': 'Float'}, 'A2': {'05': 'Float'}}, 'typemappointname': {'A1': {'04': 'temp_1', '03': 'current_1'}, 'A2': {'05': 'current_2'}}}
+2019-01-01 22:37:08+0800 [-] info:0102030405060708090A0B0C timeout
+2019-01-01 22:37:08+0800 [-] info:0102030405060708090A0B0C disconnected
+2019-01-01 23:04:56+0800 [Echo,1,192.168.3.3] Rollback failed
+	Traceback (most recent call last):
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "D:\my_app\python3.6\lib\site-packages\pymysql\connections.py", line 785, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "D:\my_app\python3.6\lib\site-packages\pymysql\connections.py", line 1075, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-01 23:04:56+0800 [-] "error:(2013, 'Lost connection to MySQL server during query ([WinError 10054] 远程主机强迫关闭了一个现有的连接。)')"
+2019-01-01 23:04:56+0800 [-] Rollback failed
+	Traceback (most recent call last):
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "D:\my_app\python3.6\lib\site-packages\pymysql\connections.py", line 785, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "D:\my_app\python3.6\lib\site-packages\pymysql\connections.py", line 1075, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-01 23:04:56+0800 [-] "error:(0, '')"
+2019-01-01 23:04:56+0800 [-] Unhandled error in Deferred:
+2019-01-01 23:04:56+0800 [-] Unhandled Error
+	Traceback (most recent call last):
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+	    self.runUntilCurrent()
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\base.py", line 851, in runUntilCurrent
+	    f(*a, **kw)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 500, in errback
+	    self._startRunCallbacks(fail)
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 567, in _startRunCallbacks
+	    self._runCallbacks()
+	--- <exception caught here> ---
+	  File "D:\my_app\python3.6\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "D:\development\Plat-1\Plat\Iotserver\server.py", line 184, in get_model_struct
+	    for tupleindex in range(len(point_typelist[index])):
+	builtins.TypeError: 'NoneType' object is not subscriptable
+	
+2019-01-01 23:05:25+0800 [-] Log opened.
+2019-01-01 23:05:25+0800 [-] EchoFactory starting on 8001
+2019-01-01 23:05:25+0800 [-] Starting factory <__main__.EchoFactory object at 0x03423FF0>
+2019-01-01 23:05:25+0800 [-] Listening....
+2019-01-01 23:05:25+0800 [-] 
+2019-01-01 23:06:24+0800 [-] {'model_name': 'khb_product_1', 'data_type': {'A1': {'04': 'UInt', '03': 'Float'}, 'A2': {'05': 'Float'}}, 'typemappointname': {'A1': {'04': 'temp_1', '03': 'current_1'}, 'A2': {'05': 'current_2'}}}
+2019-01-01 23:07:18+0800 [Echo,0,192.168.3.3] info:0102030405060708090A0B0C disconnected
+2019-01-01 23:07:19+0800 [-] {'model_name': 'khb_product_1', 'data_type': {'A1': {'04': 'UInt', '03': 'Float'}, 'A2': {'05': 'Float'}}, 'typemappointname': {'A1': {'04': 'temp_1', '03': 'current_1'}, 'A2': {'05': 'current_2'}}}
+2019-01-01 23:09:20+0800 [-] info:0102030405060708090A0B0C timeout
+2019-01-01 23:09:20+0800 [-] info:0102030405060708090A0B0C disconnected
+2019-01-01 23:09:55+0800 [-] Log opened.
+2019-01-01 23:09:55+0800 [-] EchoFactory starting on 8001
+2019-01-01 23:09:55+0800 [-] Starting factory <__main__.EchoFactory object at 0x03422FF0>
+2019-01-01 23:09:55+0800 [-] Listening....
+2019-01-01 23:09:55+0800 [-] 
+2019-01-01 23:09:59+0800 [-] {'model_name': 'khb_product_1', 'data_type': {'A1': {'04': 'UInt', '03': 'Float'}, 'A2': {'05': 'Float'}}, 'typemappointname': {'A1': {'04': 'temp_1', '03': 'current_1'}, 'A2': {'05': 'current_2'}}}
+2019-01-01 23:12:01+0800 [-] info:0102030405060708090A0B0C timeout
+2019-01-01 23:12:01+0800 [-] info:0102030405060708090A0B0C disconnected

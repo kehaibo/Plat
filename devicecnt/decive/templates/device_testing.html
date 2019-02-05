@@ -1,0 +1,75 @@
+{% extends 'home_base.html' %}
+{% block title %} Device_Test {% endblock %}
+{% block context %}
+<div class="row device_testing">
+	<div class="col-xs-12 col-sm-5 selectdevices">
+		<div class="row">
+			<div class="col-xs-12 col-sm-2 uuid_show">
+				<label style="font-size: 20px;">UUID:</label>
+			</div>
+			<div class="col-xs-12 col-sm-10 ">
+				<select class="form-control col-xs-12 col-sm-6" id="select_devices">
+					<option></option>
+					{% if devices %}
+						{% for device in devices %}
+							<option>{{device.UUID}}</option>
+						{% endfor %}
+					{% endif %}
+				</select>			
+			</div>
+		</div>
+		<div class="row device_downcommand">
+			<div class="col-xs-12 col-sm-2">
+				<label style="font-size: 17px;">命令:</label>
+			</div>
+			<div class="col-xs-12 col-sm-10">
+				{% csrf_token %}  
+				<textarea class="col-xs-12 col-sm-12" id="cmd_text"></textarea>
+				<button class="btn btn-default" type="submit" id="clear_downcmd" >清空命令</button>
+				<button class="btn btn-default" type="submit" id="send_downcmd" >发送命令</button>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-7 return_values" >
+		<label class="col-xs-12 col-sm-12" >调试数据回显</label> 
+		<div class="col-xs-12 col-sm-12 print_response" >
+			<textarea  class="col-xs-12 col-sm-12" ></textarea>
+			<button class="btn btn-default" type="submit" id="clear_return" >清空回显</button>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$('.selectdevices #select_devices').change(function(){
+			down_cmd = new Object;
+			var UUID = $(this).val();
+			down_cmd ={
+				'operation':'SendCmd',//发送命令操作
+				'UUID':UUID,//设备ID
+				'Cmd' :"",//设备命令
+			};
+		});
+		$(".device_downcommand button[id='send_downcmd']").click(function(){
+			var Cmd = $('.device_downcommand #cmd_text').val();
+			down_cmd['Cmd'] = Cmd;
+			$.ajax({
+				url:"{% url 'device:device_testing' %}",
+				type:"POST",
+				timeout:5000,
+				contextType:"application/json;charset=utf-8",
+				data:JSON.stringify(down_cmd),//data 为字典格式
+				dataType:"json",
+				async:true,
+				headers:{"X-CSRFToken":$('[name="csrfmiddlewaretoken"]').val()},
+				success:function(arg){
+				  //加载回显数据;
+				  console.log(arg);
+				},
+				error:function(XMLHttpRequest,textStatus,errorThrown){
+				  alert(textStatus);
+				},	
+			});
+		});
+	});
+</script>
+{% endblock %}

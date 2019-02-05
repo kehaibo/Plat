@@ -1,0 +1,66 @@
+web app:
+前提：该应用必须是多人多用户，可同时访问的系统。
+一、产品开发：用户自定义协议的模型
+二、设备管理：按照模型创建设备
+三、设备调试: 用于与实际的终端设备实现下行和上行数据
+四、模拟设备：模拟实际的终端设备进行上行和下行数据
+五、数据库定义：
+functions:
+	01、创建设备模型--用户自定义设备数据体模型，但是必须按TLV格式要求创建设备模型
+		
+		数据表：
+
+			模型-用户绑定表：保存用户创建的模型
+			model_user={
+							model_name:username_modelname,  #  type=str len=64
+							user_name:username,    #外键到用户
+							createtime:createtime()
+							updatetime:updatetime()
+
+			}
+			协议-模型绑定表：保存模型里面的TLV协议
+			protocl_model={
+						
+			}
+
+
+		02、按模型创建设备：device_instance
+		数据表：
+		device_instance={
+						device_id:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, #  type=str len=64
+						device_model:device_model.model_name,
+						user_name:username,
+						createtime:nowtime()
+		}
+
+		03、设备消息：device_info
+		数据表：
+		device_data={
+						device_id:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, #  type=str len=64
+						dataname01:datatype01,
+						dataname02:datatype02,
+						......,
+						createtime:nowtime()
+		}
+
+自动解析数据：
+1、通过设备UUID可知模型。
+2、通过模型可知数据体
+
+
+web具体需求：
+二、设备管理：
+1、按照模型创建设备
+2、展示设备
+3、操作设备，
+	操作包括：
+		a、修改设备信息 
+		b、删除设备 
+		c、访问设备详情
+			设备详情：
+				（1）、设备历史上报数据（JSON/16进制）
+				（2）、设备历史下发命令及命令状态
+三、设备调试: 用于与实际的终端设备实现下行和上行数据
+1、操作单个设备
+2、操作批量设备
+

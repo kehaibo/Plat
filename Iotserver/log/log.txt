@@ -1,0 +1,1546 @@
+2019-01-11 10:08:03+0800 [-] Log opened.
+2019-01-11 10:08:04+0800 [-] EchoFactory starting on 8001
+2019-01-11 10:08:04+0800 [-] Starting factory <__main__.EchoFactory object at 0x03F41FF0>
+2019-01-11 10:08:04+0800 [-] Listening....
+2019-01-11 10:08:04+0800 [-] 
+2019-01-11 12:00:37+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:00:37+0800 [-] Insert error:(2013, 'Lost connection to MySQL server during query ([WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。)')
+2019-01-11 12:00:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:00:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:01:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:01:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:01:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:01:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:02:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:02:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:02:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:02:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:03:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:03:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:03:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:03:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:04:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:04:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:04:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:04:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:05:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:05:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:05:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:05:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:06:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:06:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:06:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:06:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:07:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:07:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:07:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:07:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:08:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:08:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:08:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:08:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:09:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:09:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:09:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:09:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:10:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:10:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:10:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:10:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:11:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:11:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:11:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:11:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:12:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:12:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:12:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:12:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:13:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:13:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:13:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:13:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:14:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:14:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:14:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:14:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:15:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:15:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:15:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:15:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:16:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:16:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:16:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:16:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:17:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:17:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:17:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:17:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:18:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:18:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:18:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:18:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:19:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:19:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:19:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:19:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:20:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:20:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:20:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:20:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:21:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:21:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:21:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:21:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:22:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:22:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:22:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:22:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:23:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:23:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:23:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:23:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:24:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:24:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:24:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:24:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:25:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:25:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:25:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:25:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:26:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:26:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:26:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:26:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:27:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:27:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:27:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:27:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:28:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:28:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:28:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:28:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:29:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:29:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:29:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:29:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:30:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:30:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:30:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:30:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:31:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:31:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:31:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:31:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:32:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:32:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:32:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:32:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:33:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:33:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:33:57+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:33:57+0800 [-] Insert error:(0, '')
+2019-01-11 12:34:27+0800 [Echo,0,192.168.0.110] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:34:27+0800 [-] Insert error:(0, '')
+2019-01-11 12:34:46+0800 [Echo,0,192.168.0.110] info:D018ED28BF46356E8A2555579EE18345 disconnected
+2019-01-11 12:34:46+0800 [-] Rollback failed
+	Traceback (most recent call last):
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 250, in inContext
+	    result = inContext.theWork()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\threadpool.py", line 266, in <lambda>
+	    inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 122, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\python\context.py", line 85, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 474, in _runInteraction
+	    conn.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\twisted\enterprise\adbapi.py", line 52, in rollback
+	    self._connection.rollback()
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 431, in rollback
+	    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+	  File "C:\Python\Python36-32\lib\site-packages\pymysql\connections.py", line 745, in _execute_command
+	    raise err.InterfaceError("(0, '')")
+	pymysql.err.InterfaceError: (0, '')
+	
+2019-01-11 12:34:46+0800 [-] "error:(0, '')"

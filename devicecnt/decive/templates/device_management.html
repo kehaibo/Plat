@@ -1,0 +1,287 @@
+{% extends 'home_base.html' %}
+{% block title %} Device_Management {% endblock %}
+{% block context %}
+<div class="row " style="margin-bottom: 15px;margin-left: 10px;">
+    <button id="createdevice_botton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#createdeviceModal" style="background-color: #0066ff;font-size: 17px;"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 创建设备</button>
+
+    <div class="modal fade" id="createdeviceModal" tabindex="-1" role="dialog" aria-labelledby="createdeviceModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="createdeviceModalLabel"><strong>创建设备</strong></h4>
+          </div>
+          <div class="modal-body">
+            <form method="post">
+            	{% csrf_token %}  
+              	<div class="form-group" >
+              		<label >设备名称</label>
+              		<input type="text" class="form-control" id="device_name" required="required">
+              	</div>
+              	<div class="form-group" style="font-size: 20px;">
+	                <label for="recipient-name" class="control-label" style="font-size: 17px;">产品型号</label>
+						<select class="form-control" id="ProductModel_select" required='required' style="font-size: 17px;">
+						<option></option>
+						{% if ProductModelobj %}
+							{% for ProductModel in ProductModelobj %}
+								<option style="font-size: 17px;"><strong>{{ProductModel.product_model}}</strong></option>
+							{% endfor %}
+						{% endif %}	
+						</select>
+              	</div>
+              <div class="form-group">
+                <label for="message-text" class="control-label" style="font-size: 17px;">设备描述</label>
+                <textarea class="form-control" id="device_dec" placeholder="请输入该设备的应用领域及具体项目 例如智能家居-灯控..." ></textarea>
+              </div>
+               <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+               <button type="submit" class="btn btn-primary" id="createdevicesave" style="float: right;">保存</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <div class="modal fade" id="update_deviceinfomodal" tabindex="-1" role="dialog" aria-labelledby="updatedeviceinfomodal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="updatedeviceinfomodal"><strong>创建设备</strong></h4>
+          </div>
+          <div class="modal-body">
+            <form method="post">
+            	{% csrf_token %}  
+              	<div class="form-group" >
+              		<label >设备名称</label>
+              		<input type="text" class="form-control updatedevice_name" id="updatedevice_name" required="required">
+              	</div>
+              	<div class="form-group">	
+              		<label>设备ID</label>
+              		<p class="updatedevice_uuid" style="font-size: 17px;"></p>
+              	</div>
+              	<div class="form-group" style="font-size: 20px;">
+	                <label for="recipient-name" class="control-label" style="font-size: 17px;">产品型号</label>
+						<select class="form-control ProductModel_select" id="ProductModel_select" required='required' style="font-size: 17px;">
+						<option></option>
+						{% if ProductModelobj %}
+							{% for ProductModel in ProductModelobj %}
+								<option style="font-size: 17px;"><strong>{{ProductModel.product_model}}</strong></option>
+							{% endfor %}
+						{% endif %}	
+						</select>
+              	</div>
+              <div class="form-group">
+                <label for="message-text" class="control-label" style="font-size: 17px;">设备描述</label>
+                <textarea class="form-control device_dec" id="device_dec" placeholder="请输入该设备的应用领域及具体项目 例如智能家居-灯控..."></textarea>
+              </div>
+               <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+               <button type="submit" class="btn btn-primary" id="updatedeviceinfo_save" style="float: right;">保存</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="row" id="search_device" style="margin-bottom: 2px;">	
+<!--- 按照UUID进行模糊查询设备-->
+	<div class="col-xs-8 col-sm-4 col-sm-offset-8 col-xs-offset-4" style="float: left;">
+		<form action="{% url 'device:device_management' %}" method="POST">
+		      <input  type="text" class="col-xs-8 col-sm-8 col-sm-offset-2 col-xs-offset-2" id="uuid_lastfour" placeholder="输入设备ID后4位" required="required" name="uuid_four" style="display: inline; border:2px solid #C0C0C0;border-radius: 15px;outline:none;height:30px;">
+		      <button class="col-xs-1 col-sm-1" type="submit" id="device_search"><span class="glyphicon glyphicon-search" ></span></button>
+    </form>
+	</div>
+</div>
+<div class="row" id="device_show">
+	<div class="col-xs-12  col-sm-12 device_showtable table-responsive" >
+			<table class="table table-hover"  >
+				<tr style="background-color:  #C0C0C0;">
+					<th>设备名称</th>
+					<th>设备ID</th>
+					<th>产品类型</th>
+					<th>设备状态</th>
+					<th>创建时间</th>
+					<th>	</th>
+				</tr>
+				{% for device in devices_Info_Status %}
+    				<div>	
+    					<tr class="{{device.UUID}}" id="device_informations" name='{{device.UUID}}'>	
+    						<td class="device_name">{{device.device_name}}</td>
+    						<td class="device_UUID">{{device.UUID}}</td>
+    						<td class="device_modelname">{{device.model_name.product_model}}</td>
+    						<td class="devices_status" ><span class="icon-circle"></span> {{device.info}}
+                </td> 
+    						<td class="device_createtime">{{device.create_time | date:"c"}}</td>
+    						<td class="device_desc" hidden="hidden"	>{{device.device_desc}}</td>
+    						<td>
+    							<div>	
+    							<form>	
+    								<button type="submit" id="update_deviceinfo" name="{{device.UUID}}">
+    									<span class="glyphicon glyphicon-pencil"></span>
+    								</button>
+    								<button type="submit" id="del_device" name="{{device.UUID}}" data-product='{{device.model_name.product_model}}'>
+    									<span class="glyphicon glyphicon-folder-close"></span>
+    								</button>
+    							</form>
+    							</div>
+    						</td>
+    					</tr>
+    				</div>
+				{% endfor %}
+			</table>
+	</div>
+  <div class="col-xs-12  col-sm-4 col-sm-offset-8 " style="display: inline;">
+    <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <li class="" id="backwards_page">
+        <a href="#" id="backwards_page_href" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li id="pagenumber"><a href="#" id="pagenumbertext">{{page_number}}</a></li>
+      <li class="" id="forward_page">
+        <a href="#" id="forward_page_href" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+      <li class="">
+        <a href="#" id="skip_page" aria-label="Next">
+          <span aria-hidden="true">跳转页数</span>
+        </a>
+      </li>
+      <li>
+        <input type="text" id="skip_page_number" name="skip_page_number">
+      </li>
+      <li class="disabled">
+          <span aria-hidden="true">总页数</span>
+          <span aria-hidden="true">{{total_page_number}}</span>
+      </li>
+    </ul>
+  </nav>
+  </div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$("button[id='createdevicesave']").click(function(){
+			//提交创建设备内容
+			var device_info = new Object;
+			device_info['operation'] = 'create';
+			device_info['device_name']=$('#device_name').val();
+			device_info['device_product'] = $('#ProductModel_select').val();
+			device_info['device_dec']=$('#device_dec').val();
+			//console.log(device_info);
+			$.ajax({
+				url:"{% url 'device:device_management' %}",
+	            type:"POST",
+	            timeout:6000,
+	            contextType:"application/json;charset=utf-8",
+	            data:JSON.stringify(device_info),//data 为字典格式
+	            dataType:"json",
+	            async:true,
+	            headers:{"X-CSRFToken":$('[name="csrfmiddlewaretoken"]').val()},
+	            success:function(arg){
+	                window.location.href="{% url 'device:device_management' %}";
+	            },
+	            error:function(XMLHttpRequest,textStatus,errorThrown){
+	                alert(textStatus);
+	            },
+			});
+      return false;
+		});
+    //修改设备信息
+		$(".table #device_informations button[id='update_deviceinfo']").click(function(){
+			var name = $(this).attr('name');
+			$('#update_deviceinfomodal').modal('show');
+			newinfo = update_deviceinfo(name); 
+      newinfo['operation'] = 'update';
+			return false;
+		});
+    //提交修改了的设备信息
+    $('#updatedeviceinfo_save').click(function(){
+      $.ajax({
+              url:"{% url 'device:device_management' %}",
+              type:"POST",
+              timeout:5000,
+              contextType:"application/json;charset=utf-8",
+              data:JSON.stringify(newinfo),//data 为字典格式
+              dataType:"json",
+              async:true,
+              headers:{"X-CSRFToken":$('[name="csrfmiddlewaretoken"]').val()},
+              success:function(arg){
+                  //console.log(arg);
+                  if(arg['success']=='success')
+                  {
+                      alert('修改成功');
+                  }
+                  window.location.href="{% url 'device:device_management' %}";
+              },
+              error:function(XMLHttpRequest,textStatus,errorThrown){
+                  alert(textStatus);
+              },
+      }); 
+      return false;
+    });
+    //删除设备
+    $("button[id='del_device']").click(function(){
+
+        var deldevice = new Object;
+        deldevice['operation'] ='del';
+        deldevice['device_uuid'] = $(this).attr('name');
+        deldevice['device_product'] =$(this).attr('data-product');
+       
+       if(alert_cancel('确定要删除该设备吗？'))
+        { 
+          $.ajax({
+              url:"{% url 'device:device_management' %}",
+              type:"POST",
+              timeout:5000,
+              contextType:"application/json;charset=utf-8",
+              data:JSON.stringify(deldevice),//data 为字典格式
+              dataType:"json",
+              async:true,
+              headers:{"X-CSRFToken":$('[name="csrfmiddlewaretoken"]').val()},
+              success:function(arg){
+                  //console.log(arg);
+                  if(arg['success']=='success')
+                  {
+                      alert('设备已删除，请刷新');
+                  }
+                  window.location.href="{% url 'device:device_management' %}";
+              },
+              error:function(XMLHttpRequest,textStatus,errorThrown){
+                  alert(textStatus);
+              },
+          }); 
+        }
+        return false;
+    });
+    //设备详情
+    $('.table #device_informations').dblclick(function(){
+      uri=$(this).attr('name');
+      window.location.href="../device_details/"+uri;
+    });
+    $('.pagination #backwards_page').click(function(){
+      var before_onepage = 1;
+      if($('.pagination #pagenumber').text()==1)//向后-1跳转
+      {
+        $('.pagination #pagenumber  #pagenumbertext').text('1');
+      }
+      else
+      {
+       before_onepage =  parseInt($('.pagination #pagenumber #pagenumbertext').text())-1;
+        $('.pagination #pagenumber #pagenumbertext').text(before_onepage);
+      }
+      window.location.href="{% url 'device:device_management' %}"+String(before_onepage);
+    });
+    $('.pagination #forward_page').click(function(){
+      var forward_onepage = parseInt($('.pagination #pagenumber #pagenumbertext').text())+1;
+      $('.pagination #pagenumber #pagenumbertext').text(forward_onepage);
+      window.location.href="{% url 'device:device_management' %}"+String(forward_onepage);
+    });
+    $('#skip_page').click(function(){
+      var skip_page_number = $('#skip_page_number').val();
+      window.location.href="{% url 'device:device_management' %}"+String(skip_page_number);
+    })
+    devicestatus_style();  
+  });  
+</script>
+{% endblock %}

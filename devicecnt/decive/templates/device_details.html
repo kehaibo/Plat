@@ -1,0 +1,58 @@
+{% extends 'home_base.html' %}
+{% block title %} Device_details {% endblock %}
+{% block context %}
+<div class="row">
+	<div class="col-xs-12  col-sm-12">
+		<ul class="nav nav-pills Equipment_nav" role="tablist">
+			<li role="presentation" id="Equipment_informations" class="active"><a href="#Equipment_informations_show" aria-controls="Equipment_informations_show" role="tab" data-toggle="tab" >设备信息</a></li>
+			<li role="presentation" id="Equipment_history_data" ><a href="#Equipment_history_data_show" aria-controls="Equipment_history_data_show" role="tab" data-toggle="tab">历史数据</a></li>
+			<li role="presentation" id="Equipment_command_status"><a href="#Equipment_command_status_show" aria-controls="Equipment_command_status_show" role="tab" data-toggle="tab">命令状态</a></li>
+		</ul>
+		<div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active" id="Equipment_informations_show">
+		    	<div class="device_details_info" id="Equipment_info" >
+		    		<div class="_info">
+		    			<div class="col-xs-6  col-sm-6" id="first_li">
+		    				<p>产品模型</p>
+		    				<label>{{device.model_name.product_model}}</label>
+		    				<p>UUID</p>
+		    				<label>{{device.UUID}}</label>
+		    			</div>
+		    			<div class="col-xs-6  col-sm-6" id="second_li">
+		    				<p>设备状态</p>
+		    				<label>{{device.info}}</label>
+		    				<p>创建时间</p>
+		    				<label>{{device.create_time}}</label>
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div role="tabpanel" class="tab-pane" id="Equipment_history_data_show">
+		    	<div class="device_details_info" id="Equipment_data">
+		    		<div class="_history_data">
+		    			{% if HistoryDatalist %}
+		    				{% for HistoryData in HistoryDatalist %}
+		    					<p>{{HistoryData}}</p>
+		    				{% endfor %}
+		    			{% endif %}
+		    		</div>
+		    	</div>
+		    </div>
+		    <div role="tabpanel" class="tab-pane" id="Equipment_command_status_show">
+		    	<div class="device_details_info" id="Equipment_status">
+		    		<div class="_command_status">
+		    			数据命令状态
+		    		</div>
+		    	</div>
+		    </div>
+		</div>	
+	</div>
+</div>	
+<script type="text/javascript">
+	$(function() {
+		//jquery 入口函数
+
+
+	});
+</script>
+{% endblock %}
